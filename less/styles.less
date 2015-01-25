@@ -1,0 +1,170 @@
+/*
+font-family: 'geosanslightregular';
+font-family: 'dekar_lightregular';
+font-family: 'ralewaythin';
+*/
+
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    overflow: hidden;
+}
+
+body {
+    >header {
+        background-image:url('../img/swirl_pattern.png');
+        background-repeat:repeat;
+        background-size: 300px 300px;
+        height:350px;
+        overflow:hidden;
+
+        >h1 {
+            margin-top: 61px;
+            color:#f23779;
+        }
+
+        >h2 {
+            margin-top:-10px;
+            color:#ffa800;
+            
+            em {
+                font-family: 'ralewaythin';
+            }
+        }
+
+        >h1, >h2 {
+            font-size:118px;
+            margin-left: 48px;
+            font-family: 'dekar_lightregular';
+        }
+    }
+}
+
+.design {
+    header {
+        background-color:#f23779;
+    }
+}
+
+.illustration {
+    header {
+        background-color:#ffa800;
+    }
+}
+
+main {
+    section {
+        height:349px;
+        
+        header {
+            height:113px;
+            padding-top:1px;
+            position:relative;
+            width:100%;
+            
+            div {
+                height:20%;
+            }
+
+            h3 {
+                float:left;
+                font-family: dekar_lightregular;
+                font-size: 66px;
+                color: #fff;
+                margin-top: 30px;
+                margin-left: 40px;
+            }
+        }
+
+        nav {
+            background-color: #e4e4e4;
+            margin-left: 337px;
+            height:80%;
+            
+            ul {
+                li {
+                    display:inline-block;
+                    background-color:#e4e4e4;
+                    
+                    a {
+                        font-family: 'geosanslightregular';
+                        text-decoration: none;
+                        padding: 10px 14px;
+                        display: block;
+                        font-size: 28px;
+                        color:#616161 !important;
+                        
+                        &:hover {
+                            color:orange !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    height:160px;
+    background-color: #090a0f;
+    padding-top: 0.50%;
+    padding-bottom: 0.50%;
+    
+    div {
+        background-image:url('../img/swirl_pattern_dark.png');
+        background-repeat:repeat;
+        background-size: 300px 300px;
+        width:100%;
+        height:100%;
+        position:relative;
+        
+        aside {
+            font-family: 'geosanslightregular';
+            width:33%;
+            color:#8f959b;
+            position:absolute;
+            background-color:#222629;
+            height:100%;
+            position:relative;
+            left:-29%;
+            transition: 1s;
+            margin-left: -1px;
+            
+            &:hover  {
+                transition: 1s;
+                left: 0;
+            }
+            
+            p {
+                margin-right:12%;
+                padding: 10px;
+            }
+            
+            .tab {
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                height: 100%;
+                width: 12%;
+                background-color: #090a0f;
+                
+                div {
+                    background-image:url('../img/about-me-tab.png');
+                    background-size:50px 145px;
+                    width: 100%;
+                    height: 100%;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    cursor:pointer;
+                }
+            }
+            
+            address {
+                position:Absolute;
+                top:0px;
+                right:0px;
+            }
+        }
+    }
+}
