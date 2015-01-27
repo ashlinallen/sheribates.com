@@ -4,6 +4,14 @@ font-family: 'dekar_lightregular';
 font-family: 'ralewaythin';
 */
 
+@orange: #ffa800;
+@pink: #f23779;
+@lightgrey: #e4e4e4;
+
+* {
+    box-sizing:border-box;
+}
+
 html, body {
     margin:0;
     padding:0;
@@ -11,93 +19,137 @@ html, body {
     overflow: hidden;
 }
 
-body {
-    >header {
-        background-image:url('../img/swirl_pattern.png');
-        background-repeat:repeat;
-        background-size: 300px 300px;
-        height:350px;
-        overflow:hidden;
+body>header {
+    background-image:url('../img/swirl_pattern.png');
+    background-repeat:repeat;
+    background-size: 247px;
+    height:30%;
+    width:100%;
+    overflow:hidden;
+
+    >div {
+          position: relative;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 
         >h1 {
-            margin-top: 61px;
-            color:#f23779;
+            color:@pink;
         }
 
         >h2 {
-            margin-top:-10px;
-            color:#ffa800;
-            
+            margin-top:-1vh;
+            color:@orange;
+
             em {
                 font-family: 'ralewaythin';
             }
         }
 
         >h1, >h2 {
-            font-size:118px;
-            margin-left: 48px;
-            font-family: 'dekar_lightregular';
+            margin-left: 4vh;
+            letter-spacing: -2px;
+            font-size: 10vh;
+            line-height:10vh;
+            font-family: dekar_lightregular;
         }
-    }
-}
-
-.design {
-    header {
-        background-color:#f23779;
-    }
-}
-
-.illustration {
-    header {
-        background-color:#ffa800;
     }
 }
 
 main {
+    height:60%;
+    width:100%;
+
     section {
-        height:349px;
-        
+        height:50%;
+
+        &.design {
+            header {
+                background-color:@pink;
+            }
+
+            nav ul li a {
+                &:hover {
+                    color:@pink;
+                }
+            }
+        }
+
+        &.illustration {
+            header {
+                background-color:@orange;
+            }
+
+            nav ul li a {
+                &:hover {
+                    color:@orange;
+                }
+            }
+        }
+
         header {
-            height:113px;
-            padding-top:1px;
+            height:32.53%;
+            overflow:hidden;
             position:relative;
             width:100%;
-            
+
             div {
-                height:20%;
+                height:13.83%;
             }
 
             h3 {
                 float:left;
-                font-family: dekar_lightregular;
-                font-size: 66px;
                 color: #fff;
-                margin-top: 30px;
-                margin-left: 40px;
+                margin-top: 3vh;
+                margin-left: 3.75vh;
+                letter-spacing: -1px;
+                font-size:5vh;
+                line-height:5vh;
+                font-family: dekar_lightregular;
+            }
+        }
+
+        .extra-slider {
+            height:67.47% !important;
+            width:auto;
+
+            img, .wrapper, ul, ul li {
+                height:100%;
+            }
+
+            .wrapper {
+                width:auto !important;
+            }
+
+            .pagination {
+                position:absolute;
             }
         }
 
         nav {
-            background-color: #e4e4e4;
-            margin-left: 337px;
-            height:80%;
-            
+            background-color:@lightgrey;
+            margin-left: 30vh;
+            height:86.37%;
+            overflow:hidden;
+
             ul {
+                margin-left: 3vh;
+                height:8.4vh;
+
                 li {
                     display:inline-block;
-                    background-color:#e4e4e4;
-                    
+                    background-color:@lightgrey;
+
                     a {
-                        font-family: 'geosanslightregular';
                         text-decoration: none;
-                        padding: 10px 14px;
+                        padding: 3vh 2vh;
                         display: block;
-                        font-size: 28px;
-                        color:#616161 !important;
-                        
-                        &:hover {
-                            color:orange !important;
-                        }
+                        color: #616161;
+                        letter-spacing: -1px;
+                        line-height:2.8vh;
+                        font-size:2.8vh;
+                        font-family: geosanslightregular;
                     }
                 }
             }
@@ -106,65 +158,104 @@ main {
 }
 
 footer {
-    height:160px;
+    height:10%;
+    width:100%;
     background-color: #090a0f;
-    padding-top: 0.50%;
-    padding-bottom: 0.50%;
-    
+    padding-top: 1.25vh;
+
     div {
         background-image:url('../img/swirl_pattern_dark.png');
-        background-repeat:repeat;
-        background-size: 300px 300px;
+        background-repeat:repeat-x;
+        background-size: 247px;
         width:100%;
-        height:100%;
+        height:99.25%;
         position:relative;
-        
+
         aside {
             font-family: 'geosanslightregular';
-            width:33%;
+            width:55vh;
             color:#8f959b;
             position:absolute;
             background-color:#222629;
             height:100%;
             position:relative;
-            left:-29%;
+            left:-52vh;
             transition: 1s;
-            margin-left: -1px;
-            
+            margin-left: -3px;
+
             &:hover  {
                 transition: 1s;
                 left: 0;
             }
-            
+
             p {
-                margin-right:12%;
-                padding: 10px;
+                padding: 1vh;
+                margin-right:3vh;
+                line-height:1.5vh;
+                font-size:1.5vh;
             }
             
             .tab {
                 position: absolute;
-                right: 0px;
-                top: 0px;
+                width: 3vh;
                 height: 100%;
-                width: 12%;
-                background-color: #090a0f;
-                
-                div {
-                    background-image:url('../img/about-me-tab.png');
-                    background-size:50px 145px;
-                    width: 100%;
-                    height: 100%;
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    cursor:pointer;
-                }
+                right: 0;
+                top: 0;
+                cursor:pointer;
+                background-image:url('../img/about-me-tab.png');
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center center;
             }
-            
+
             address {
                 position:Absolute;
-                top:0px;
-                right:0px;
+                top:0;
+                right:0;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body>header {
+        height:20% !important;
+        >div {
+            >h1, >h2 {
+                font-size:10vw !important;
+                line-height:10vw !important;
+            }
+        }
+    }
+
+    main {
+        height:70% !important;
+
+        nav {
+            display:none !important;
+        }
+
+        section {
+            header {
+                height:20% !important;
+                h3 {
+                    margin-top: 1.5vh !important;
+                }
+            }
+            .extra-slider {
+                height:80% !important;
+                width:auto;
+            }
+        }
+    }
+
+    aside {
+        left: 0 !important;
+        width:100% !important;
+
+        p {
+            font-size:2vw !important;
+            line-height:2vw !important;
         }
     }
 }

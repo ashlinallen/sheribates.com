@@ -1,3 +1,6 @@
 jQuery(document).ready(function($) {
-    //$(".extra-slider").extraSlider();
+    $(".extra-slider").extraSlider({
+        'draggable': true,
+        'navigate': false
+    });
 });
