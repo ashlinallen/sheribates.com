@@ -33,7 +33,8 @@ http://slider.extralagence.com
             'onUpdate': null,
             'onUpdateClones': null,
             'onPause': null,
-            'onResume': null
+            'onResume': null,
+            'pagination': null
         }, options);
 
         this.each(function () {
@@ -45,7 +46,7 @@ http://slider.extralagence.com
                 $items = $slider.find('> li'),
                 numClones = 0,
                 $navigation = $this.find('.navigation'),
-                $pagination = $this.find('.pagination'),
+                $pagination = opt.pagination || $this.find('.pagination'),
                 singleWidth = 0,
                 singleHeight = 0,
                 total = $items.length - 1,
@@ -218,6 +219,8 @@ http://slider.extralagence.com
                     adjustPosition();
                     $slider.width(99999);
                 }
+                    adjustPosition();
+                    $slider.width(99999);
 
                 // ACTIVE CLASS
                 $items.removeClass('active');
@@ -228,10 +231,9 @@ http://slider.extralagence.com
                     opt.onUpdate($items.eq(currentItem + numClones), total + 1, $this);
                 }
                 $this.trigger('update.extra.slider', [$items.eq(currentItem + numClones), total + 1, $this]);
-
             }
-            function updateClones() {
 
+            function updateClones() {
                 // REMOVE ALL CLONES
                 $items.find('.cloned').remove();
 

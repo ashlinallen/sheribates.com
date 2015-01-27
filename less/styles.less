@@ -194,7 +194,7 @@ footer {
                 line-height:1.5vh;
                 font-size:1.5vh;
             }
-            
+
             .tab {
                 position: absolute;
                 width: 3vh;
@@ -207,17 +207,75 @@ footer {
                 background-repeat: no-repeat;
                 background-position: center center;
             }
+        }
 
-            address {
-                position:Absolute;
-                top:0;
-                right:0;
+        address {
+            position:absolute;
+            display:inline-block;
+            right:0;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+
+            ul li {
+                float:right;
+                clear:both;
+
+                a {
+                    display:inline-block;
+                    width:2vh;
+                    height:2vh;
+                    background-size:2vh;
+                    float:left;
+                    line-height:2vh;
+                    margin-right:0.5vh;
+
+                    &.email{
+                        background-image:url('../img/email.png');
+                    }
+
+                    &.web{
+                        background-image:url('../img/web.png');
+                    }
+
+                    &.facebook{
+                        background-image:url('../img/facebook.png');
+                    }
+
+                    &.twitter{
+                        background-image:url('../img/twitter.png');
+                    }
+
+                    &.tumblr{
+                        background-image:url('../img/tumblr.png');
+                    }
+
+                    &.linkedIn{
+                        background-image:url('../img/linkedIn.png');
+                    }
+
+                    &.resume{
+                        background-image:url('../img/pdf.png');
+                    }
+                }
+
+                div {
+                    font-family: geosanslightregular;
+                    color:#fff;
+                    float:right;
+                    width:9vh;
+                    height:2.5vh;
+                    line-height:2.5vh;
+                    font-size:1.5vh;
+                }
             }
         }
     }
 }
 
-@media screen and (max-width: 800px) {
+@media 
+screen and (max-width: 800px) {
     body>header {
         height:20% !important;
         >div {
@@ -250,8 +308,9 @@ footer {
     }
 
     aside {
+    display:none;
         left: 0 !important;
-        width:100% !important;
+        width:90% !important;
 
         p {
             font-size:2vw !important;
