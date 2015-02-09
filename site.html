@@ -9,16 +9,14 @@
     <meta name="description" content="Professional portfolio for Sheri Bates, a Graphic Designer in Seattle, WA.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="css/reset.css" rel="stylesheet" media="all">
-    <link href="css/extra.slider.css" rel="stylesheet" media="all">
-    <link href="css/fonts.css" rel="stylesheet" media="all">
-    <link href="css/styles.css" rel="stylesheet" media="all">
-
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/gsap/TweenMax.min.js"></script>
-    <script src="js/gsap/utils/Draggable.min.js"></script>
-    <script src="js/extra.slider.js"></script>
-    <script src="js/site.js"></script>
+    <link rel="stylesheet" media="all" href="css/reset.css">
+    <link rel="stylesheet" media="all" href="css/slick.css">
+    <link rel="stylesheet" media="all" href="css/slick-theme.css">
+    <link rel="stylesheet" media="all" href="css/fonts.css">
+    <link rel="stylesheet" media="all" href="css/styles.css">
+    
+    <script type="text/javascript" data-main="js/app" src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js"></script>
+    <script type="text/javascript">window.requirejs || document.write('<script type="text/javascript" data-main="js/app" src="js/require.js"><\/script>');</script>
 </head>
 
 <body>
@@ -42,27 +40,13 @@
                     </ul>
                 </nav>
             </header>
-
-            <div class="extra-slider">
-                <div class="wrapper">
-                    <ul>
-                        <li>
-                            <img src="img/examples/email-example-1.png" alt="">
-                        </li>
-                        <li>
-                            <img src="img/examples/email-example-2.png" alt="" >
-                        </li>
-                        <li>
-                            <img src="img/examples/email-example-3.png" alt="">
-                        </li>
-                        <li>
-                            <img src="img/examples/email-example-4.png" alt="" >
-                        </li>
-                        <li>
-                            <img src="img/examples/email-example-5.png" alt="" >
-                        </li>
-                    </ul>
-                </div>
+            
+            <div class="image_slider">
+              <div><img src="img/examples/email-example-1.png" alt=""></div>
+              <div><img src="img/examples/email-example-2.png" alt="" ></div>
+              <div><img src="img/examples/email-example-3.png" alt=""></div>
+              <div><img src="img/examples/email-example-4.png" alt="" ></div>
+              <div><img src="img/examples/email-example-5.png" alt="" ></div>
             </div>
         </section>
 
@@ -79,26 +63,12 @@
                 </nav>
             </header>
 
-            <div class="extra-slider">
-                <div class="wrapper">
-                    <ul>
-                        <li>
-                            <img src="img/examples/illu-example-1.png">
-                        </li>
-                        <li>
-                            <img src="img/examples/illu-example-2.png">
-                        </li>
-                        <li>
-                            <img src="img/examples/illu-example-3.png">
-                        </li>
-                        <li>
-                            <img src="img/examples/illu-example-4.png">
-                        </li>
-                        <li>
-                            <img src="img/examples/illu-example-5.png">
-                        </li>
-                    </ul>
-                </div>
+            <div class="image_slider">
+              <div><img src="img/examples/illu-example-1.png" alt=""></div>
+              <div><img src="img/examples/illu-example-2.png" alt="" ></div>
+              <div><img src="img/examples/illu-example-3.png" alt=""></div>
+              <div><img src="img/examples/illu-example-4.png" alt="" ></div>
+              <div><img src="img/examples/illu-example-5.png" alt="" ></div>
             </div>
         </section>
     </main>
