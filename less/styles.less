@@ -109,9 +109,13 @@ main {
                 font-family: dekar_lightregular;
             }
         }
-
         .extra-slider {
             height:67.47% !important;
+            img, .wrapper, ul, ul li {
+                height:100%;
+            }
+        }
+/*
             width:auto;
 
             img, .wrapper, ul, ul li {
@@ -126,7 +130,7 @@ main {
                 position:absolute;
             }
         }
-
+*/
         nav {
             background-color:@lightgrey;
             margin-left: 30vh;
@@ -302,8 +306,22 @@ screen and (max-width: 800px) {
             }
             .extra-slider {
                 height:80% !important;
-                width:auto;
+                overflow:hidden;
             }
+            
+            /*
+            .extra-slider {
+                height:80% !important;
+                width:auto;
+                overflow:hidden;
+                
+                ul li {
+                    overflow:hidden;
+                    width:50%;
+                    height:100%;
+                }
+            }
+            */
         }
     }
 
