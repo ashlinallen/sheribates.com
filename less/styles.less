@@ -64,25 +64,41 @@ main {
     section {
         height:50%;
 
-        &.design {
+        &#design {
             header {
                 background-color:@pink;
             }
-
-            nav ul li a {
-                &:hover {
+            
+            nav ul li {
+                a {
+                    &:hover,
+                    &.selected {
+                        color:@pink;
+                    }
+                }
+                
+                .slick-dots li.slick-active button:before
+                {
                     color:@pink;
                 }
             }
         }
 
-        &.illustration {
+        &#illustration {
             header {
                 background-color:@orange;
             }
 
-            nav ul li a {
-                &:hover {
+            nav ul li {
+                a {
+                    &:hover,
+                    &.selected {
+                        color:@orange;
+                    }
+                }
+                
+                .slick-dots li.slick-active button:before
+                {
                     color:@orange;
                 }
             }
@@ -110,19 +126,19 @@ main {
             }
         }
         
-        
-
-.image_slider {
-    height: 67.47%;
-    
-    img {
-        width:100%;
-    }
-    
-    .slick-slide {
-        width:25%;
-    }
-}
+        .image_slider {
+            height: 67.47%;
+            
+            img {
+                width:100%;
+                height:100%;
+            }
+            
+            .slick-track,
+            .slick-list {
+                height:100%;
+            }
+        }
 
         nav {
             background-color:@lightgrey;
@@ -130,17 +146,20 @@ main {
             height:86.37%;
             overflow:hidden;
 
-            ul {
+            >ul {
                 margin-left: 3vh;
                 height:8.4vh;
 
-                li {
+                >li {
                     display:inline-block;
                     background-color:@lightgrey;
+                    float:left;
+                    height:100%;
 
                     a {
+                        top:0;
                         text-decoration: none;
-                        padding: 3vh 2vh;
+                        padding: 3vh 2vh 0 2vh;
                         display: block;
                         color: #616161;
                         letter-spacing: -1px;
@@ -297,24 +316,10 @@ screen and (max-width: 800px) {
                     margin-top: 1.5vh !important;
                 }
             }
-            .extra-slider {
-                height:80% !important;
-                overflow:hidden;
-            }
             
-            /*
-            .extra-slider {
-                height:80% !important;
-                width:auto;
-                overflow:hidden;
-                
-                ul li {
-                    overflow:hidden;
-                    width:50%;
-                    height:100%;
-                }
+            .image_slider {
+                height: 80%;
             }
-            */
         }
     }
 

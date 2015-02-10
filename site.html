@@ -12,6 +12,8 @@
     <link rel="stylesheet" media="all" href="css/reset.css">
     <link rel="stylesheet" media="all" href="css/slick.css">
     <link rel="stylesheet" media="all" href="css/slick-theme.css">
+    <link rel="stylesheet" media="all" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" media="all" href="css/jquery.fancybox-thumbs.css">
     <link rel="stylesheet" media="all" href="css/fonts.css">
     <link rel="stylesheet" media="all" href="css/styles.css">
     
@@ -28,47 +30,43 @@
     </header>
 
     <main>
-        <section class="design">
+        <section id="design">
             <header>
                 <h3>Design</h3>
                 <div></div>
                 <nav>
                     <ul>
-                        <li><a href="#" class="pageIndicator email">Email Templates</a></li>
-                        <li><a href="#" class="pageIndicator web">Web Design</a></li>
-                        <li><a href="#" class="pageIndicator print">Print Design</a></li>
+                        <li><a href="#" data-filter="email" class="selected">Email Templates</a></li>
+                        <li><a href="#" data-filter="web">Web Design</a></li>
+                        <li><a href="#" data-filter="print">Print Design</a></li>
                     </ul>
                 </nav>
             </header>
             
             <div class="image_slider">
-              <div><img src="img/examples/email-example-1.png" alt=""></div>
-              <div><img src="img/examples/email-example-2.png" alt="" ></div>
-              <div><img src="img/examples/email-example-3.png" alt=""></div>
-              <div><img src="img/examples/email-example-4.png" alt="" ></div>
-              <div><img src="img/examples/email-example-5.png" alt="" ></div>
+              <a rel="email" href="img/examples/EmailTemplates/email-example-1.png"><img src="img/examples/EmailTemplates/email-example-1.png"></a>
+              <a rel="web" href="img/examples/WebDesign/web-example-1.png"><img src="img/examples/WebDesign/web-example-1.png"></a>
+              <a rel="print" href="img/examples/PrintDesign/print-example-1.png"><img src="img/examples/PrintDesign/print-example-1.png"></a>
             </div>
         </section>
 
-        <section class="illustration">
+        <section id="illustration">
             <header>
                 <h3>Illustration</h3>
                 <div></div>
                 <nav>
                     <ul>
-                        <li><a href="#" class="pageIndicator personal">Personal Work</a></li>
-                        <li><a href="#" class="pageIndicator commissions">Commissions</a></li>
-                        <li><a href="#" class="pageIndicator other">Sketches & Other Stuff</a></li>
+                        <li><a href="#" data-filter="personal" class="selected">Personal Work</a></li>
+                        <li><a href="#" data-filter="commissions">Commissions</a></li>
+                        <li><a href="#" data-filter="other">Sketches & Other Stuff</a></li>
                     </ul>
                 </nav>
             </header>
 
             <div class="image_slider">
-              <div><img src="img/examples/illu-example-1.png" alt=""></div>
-              <div><img src="img/examples/illu-example-2.png" alt="" ></div>
-              <div><img src="img/examples/illu-example-3.png" alt=""></div>
-              <div><img src="img/examples/illu-example-4.png" alt="" ></div>
-              <div><img src="img/examples/illu-example-5.png" alt="" ></div>
+              <a rel="other" href="img/examples/Sketches/sketch-example-1.png"><img src="img/examples/Sketches/sketch-example-1.png"></a>
+              <a rel="personal" href="img/examples/PersonalWork/personal-work-1.png"><img src="img/examples/PersonalWork/personal-work-1.png"></a>
+              <a rel="commissions" href="img/examples/Commissions/commission-example-1.png"><img src="img/examples/Commissions/commission-example-1.png"></a>
             </div>
         </section>
     </main>
@@ -84,19 +82,18 @@
             <address>
                 <ul>
                     <li>
-                        <a href="#" class="email"></a>
-                        <!-- <a href="#" class="web"></a> -->
+                        <a href="mailto:sheralyn.bates@gmail.com" class="email"></a>
                         <div>talk to me</div>
                     </li>
                     <li>
-                        <a href="#" class="facebook"></a>
-                        <a href="#" class="twitter"></a>
-                        <a href="#" class="tumblr"></a>
+                        <a target="_blank" href="https://www.facebook.com/justsherithings" class="facebook"></a>
+                        <a target="_blank" href="https://twitter.com/scaryassghost" class="twitter"></a>
+                        <a target="_blank" href="http://scaryassghost.tumblr.com/" class="tumblr"></a>
                         <div>follow me</div>
                     </li>
                     <li>
-                        <a href="#" class="linkedIn"></a>
-                        <a href="#" class="resume"></a>
+                        <a target="_blank" href="https://www.linkedin.com/profile/view?id=69542781" class="linkedIn"></a>
+                        <a target="_blank" href="Sheri-Bates_Resume.pdf" class="resume"></a>
                         <div>hire me</div>
                     </li>
                 </ul>
