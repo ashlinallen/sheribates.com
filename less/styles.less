@@ -26,7 +26,47 @@ body>header {
     height:30%;
     width:100%;
     overflow:hidden;
+    position:relative;
 
+    #palettes {
+        height:8vh;
+        position:absolute;
+        right:0;
+        top:50%;
+        margin-top:-4vh;
+            
+        #palette1, #palette2, #palette3, #palette4 {
+            height:1.75vh;
+            width:3.5vh;
+            right:-1.75vh;
+            position:absolute;
+            background-repeat:no-repeat;
+            background-size:cover;
+            cursor:pointer;
+            
+            &:hover  {
+                transition: 0.25s;
+                right:0vh;
+            }
+        }
+        
+        #palette1 {
+            background-image:url('../img/cs-default.png');
+        }
+        #palette2 {
+            top:2vh;
+            background-image:url('../img/cs-blue.png');
+        }
+        #palette3 {
+            top:4vh;
+            background-image:url('../img/cs-green.png');
+        }
+        #palette4 {
+            top:6vh;
+            background-image:url('../img/cs-cyan.png');
+        }
+    }
+    
     >div {
           position: relative;
           top: 50%;
@@ -125,6 +165,9 @@ main {
                 font-family: dekar_lightregular;
             }
         }
+        .image_slider {
+            height: 67.47%;
+        }
         
         .image_slider {
             height: 67.47%;
@@ -132,6 +175,12 @@ main {
             img {
                 width:100%;
                 height:100%;
+            }
+            
+            a {
+                width:240px;
+                float:left;
+                height: 100%;
             }
             
             .slick-track,

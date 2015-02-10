@@ -13,7 +13,7 @@
 
     var requires;
 
-    requires = ["jquery", "fancybox", "fancybox_thumbs", "slick", "analytics"];
+    requires = ["jquery", "fancybox", "fancybox_thumbs", "slick"];//, "analytics"
 
     define(requires, function ($) {
 
