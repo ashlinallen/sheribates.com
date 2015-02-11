@@ -5,8 +5,299 @@ font-family: 'ralewaythin';
 */
 
 @orange: #ffa800;
-@pink: #f23779;
-@lightgrey: #e4e4e4;
+@violet: #f23779;
+
+@dodger: #377df2;
+@portage: #af7cf5;
+
+@cucumber: #7cac62;
+@persianpink: #F975C0;
+
+@java: #15C9CB;
+@purple: #5900c8;
+
+@mercury: #e4e4e4;
+
+.bgfade() {
+    -webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear;
+}
+
+.fgfade() {
+    -webkit-transition: color 0.5s linear;
+    -moz-transition: color 0.5s linear;
+    -ms-transition: color 0.5s linear;
+    -o-transition: color 0.5s linear;
+    transition: color 0.5s linear;
+}
+
+.scheme_t1 {
+    @primary: @orange;
+    @secondary: @violet;
+    
+    header>div {
+        >h1 {
+            color:@secondary;
+        }
+
+        >h2 {
+            color:@primary;
+        }
+        
+        >h1, >h2 {
+            .fgfade;
+        }
+    }
+
+    main>section {
+        &#design {
+            header {
+                background-color:@secondary;
+                .bgfade;
+            }
+            
+            nav>ul>li {
+                a {
+                    &:hover,
+                    &.selected {
+                        color:@secondary;
+                        .fgfade;
+                    }
+                }
+                
+                .slick-dots li.slick-active button:before
+                {
+                    color:@secondary;
+                    .fgfade;
+                }
+            }
+        }
+
+        &#illustration {
+            header {
+                background-color:@primary;
+                .bgfade;
+            }
+
+            nav>ul>li {
+                a {
+                    &:hover,
+                    &.selected {
+                        color:@primary;
+                        .fgfade;
+                    }
+                }
+                
+                .slick-dots li.slick-active button:before
+                {
+                    color:@primary;
+                    .fgfade;
+                }
+            }
+        }
+    }
+}
+
+.scheme_t2 {
+    @primary: @dodger;
+    @secondary: @portage;
+        header>div {
+        >h1 {
+            color:@secondary;
+        }
+
+        >h2 {
+            color:@primary;
+        }
+        
+        >h1, >h2 {
+            .fgfade;
+        }
+    }
+
+    main>section {
+        &#design {
+            header {
+                background-color:@secondary;
+                .bgfade;
+            }
+            
+            nav>ul>li {
+                a {
+                    &:hover,
+                    &.selected {
+                        color:@secondary;
+                        .fgfade;
+                    }
+                }
+                
+                .slick-dots li.slick-active button:before
+                {
+                    color:@secondary;
+                    .fgfade;
+                }
+            }
+        }
+
+        &#illustration {
+            header {
+                background-color:@primary;
+                .bgfade;
+            }
+
+            nav>ul>li {
+                a {
+                    &:hover,
+                    &.selected {
+                        color:@primary;
+                        .fgfade;
+                    }
+                }
+                
+                .slick-dots li.slick-active button:before
+                {
+                    color:@primary;
+                    .fgfade;
+                }
+            }
+        }
+    }
+}
+
+.scheme_t3 {
+    @primary: @persianpink;
+    @secondary: @cucumber;
+        header>div {
+        >h1 {
+            color:@secondary;
+        }
+
+        >h2 {
+            color:@primary;
+        }
+        
+        >h1, >h2 {
+            .fgfade;
+        }
+    }
+
+    main>section {
+        &#design {
+            header {
+                background-color:@secondary;
+                .bgfade;
+            }
+            
+            nav>ul>li {
+                a {
+                    &:hover,
+                    &.selected {
+                        color:@secondary;
+                        .fgfade;
+                    }
+                }
+                
+                .slick-dots li.slick-active button:before
+                {
+                    color:@secondary;
+                    .fgfade;
+                }
+            }
+        }
+
+        &#illustration {
+            header {
+                background-color:@primary;
+                .bgfade;
+            }
+
+            nav>ul>li {
+                a {
+                    &:hover,
+                    &.selected {
+                        color:@primary;
+                        .fgfade;
+                    }
+                }
+                
+                .slick-dots li.slick-active button:before
+                {
+                    color:@primary;
+                    .fgfade;
+                }
+            }
+        }
+    }
+}
+
+.scheme_t4 {
+    @primary: @java;
+    @secondary: @purple;
+    header>div {
+        >h1 {
+            color:@secondary;
+        }
+
+        >h2 {
+            color:@primary;
+        }
+        
+        >h1, >h2 {
+            .fgfade;
+        }
+    }
+
+    main>section {
+        &#design {
+            header {
+                background-color:@secondary;
+                .bgfade;
+            }
+            
+            nav>ul>li {
+                a {
+                    &:hover,
+                    &.selected {
+                        color:@secondary;
+                        .fgfade;
+                    }
+                }
+                
+                .slick-dots li.slick-active button:before
+                {
+                    color:@secondary;
+                    .fgfade;
+                }
+            }
+        }
+
+        &#illustration {
+            header {
+                background-color:@primary;
+                .bgfade;
+            }
+
+            nav>ul>li {
+                a {
+                    &:hover,
+                    &.selected {
+                        color:@primary;
+                        .fgfade;
+                    }
+                }
+                
+                .slick-dots li.slick-active button:before
+                {
+                    color:@primary;
+                    .fgfade;
+                }
+            }
+        }
+    }
+}
 
 * {
     box-sizing:border-box;
@@ -35,7 +326,7 @@ body>header {
         top:50%;
         margin-top:-4vh;
             
-        #palette1, #palette2, #palette3, #palette4 {
+        div {
             height:1.75vh;
             width:3.5vh;
             right:-1.75vh;
@@ -48,22 +339,25 @@ body>header {
                 transition: 0.25s;
                 right:0vh;
             }
-        }
         
-        #palette1 {
-            background-image:url('../img/cs-default.png');
-        }
-        #palette2 {
-            top:2vh;
-            background-image:url('../img/cs-blue.png');
-        }
-        #palette3 {
-            top:4vh;
-            background-image:url('../img/cs-green.png');
-        }
-        #palette4 {
-            top:6vh;
-            background-image:url('../img/cs-cyan.png');
+            &.t1 {
+                background-image:url('../img/cs-default.png');
+            }
+            
+            &.t2 {
+                top:2vh;
+                background-image:url('../img/cs-blue.png');
+            }
+            
+            &.t3 {
+                top:4vh;
+                background-image:url('../img/cs-green.png');
+            }
+            
+            &.t4 {
+                top:6vh;
+                background-image:url('../img/cs-cyan.png');
+            }
         }
     }
     
@@ -74,13 +368,8 @@ body>header {
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
 
-        >h1 {
-            color:@pink;
-        }
-
         >h2 {
             margin-top:-1vh;
-            color:@orange;
 
             em {
                 font-family: 'ralewaythin';
@@ -103,46 +392,6 @@ main {
 
     section {
         height:50%;
-
-        &#design {
-            header {
-                background-color:@pink;
-            }
-            
-            nav ul li {
-                a {
-                    &:hover,
-                    &.selected {
-                        color:@pink;
-                    }
-                }
-                
-                .slick-dots li.slick-active button:before
-                {
-                    color:@pink;
-                }
-            }
-        }
-
-        &#illustration {
-            header {
-                background-color:@orange;
-            }
-
-            nav ul li {
-                a {
-                    &:hover,
-                    &.selected {
-                        color:@orange;
-                    }
-                }
-                
-                .slick-dots li.slick-active button:before
-                {
-                    color:@orange;
-                }
-            }
-        }
 
         header {
             height:32.53%;
@@ -190,7 +439,7 @@ main {
         }
 
         nav {
-            background-color:@lightgrey;
+            background-color:@mercury;
             margin-left: 30vh;
             height:86.37%;
             overflow:hidden;
@@ -201,9 +450,10 @@ main {
 
                 >li {
                     display:inline-block;
-                    background-color:@lightgrey;
+                    background-color:@mercury;
                     float:left;
                     height:100%;
+                    min-width:95px;
 
                     a {
                         top:0;
