@@ -210,16 +210,6 @@
                         slidesToShow: 2,
                         slidesToScroll: 2
                     }
-                },
-
-                {
-                    breakpoint: 400,
-                    settings: {
-                        dots: false,
-                        speed: 200,
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
                 }
             ]
         });
