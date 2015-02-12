@@ -2,12 +2,10 @@
 /*jslint browser: true, indent: 4*/
 /*global $, define */
 
-//Todo: set up hello@sheribates.com
-//Todo: nav arrows
 //Todo: bug when switching categories after resizing
 
 //Todo: need real "about" content
-//Todo: remainder of example images
+//Todo: favicon
 
 (function () {
     "use strict";
@@ -152,6 +150,7 @@
         images.init();
 
         $(".image_slider").slick({
+            lazyLoad: 'ondemand',
             dots: true,
             infinite: true,
             arrows: true,
@@ -249,14 +248,27 @@
             $(targetcl + ' .image_slider').slick('slickSetOption', 'appendDots', $(this).parent(), true);
         });
 
-        $(".image_slider a").fancybox({
-            //helpers:  {
-            //    thumbs : {
-            //        width: 100,
-            //        height: 100
-            //    }
-            //}
-        });
+        $(".image_slider a").fancybox(
+            {
+                caption : {
+                    type : 'inside'
+                },
+                //afterLoad: function(current, previous) {
+                //    if (previous) {
+                //        if ((current.index == previous.index+1) || (current.index < previous.index-1)) 
+                //        {
+                //            $('#illustration .image_slider').slick('slickNext'); 
+                //        }
+                //        if ((current.index == previous.index-1) || (current.index > previous.index+1))
+                //        {
+                //            $('#illustration .image_slider').slick('slickPrev');
+                //        }
+                //    }
+                //},
+                nextEffect  : 'fade',
+                prevEffect  : 'fade'
+            }
+        );
 
         $('#palettes div').on('click', function () {
             $('body').removeClass();

@@ -8,16 +8,15 @@ requirejs.config({
             'vendor/jquery-1.11.1.min'
         ],
         fancybox: [
-            'http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack',
-            'vendor/fancybox/jquery.fancybox.pack'
+            'vendor/fancybox/jquery.fancybox'
         ],
         fancybox_thumbs: [
             'http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/helpers/jquery.fancybox-thumbs',
             'vendor/fancybox/jquery.fancybox-thumbs'
         ],
         slick: [
-            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.4.0/slick.min',
-            'vendor/slick/slick.min'
+            //'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.4.0/slick.min',
+            'vendor/slick/slick'
         ],
         analytics: [
             'ga'
