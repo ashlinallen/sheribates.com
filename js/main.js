@@ -16,7 +16,6 @@
 //Todo: ipad vertical header size
 
 //Todo: color buttons startup fan
-//Todo: favicon
 
 (function () {
     "use strict";
@@ -47,6 +46,37 @@
     define(requires, function ($) {
         imagesArr = [];
 
+        var debug = (function (inputString, clear) {
+            //Input: (string)inputString, (bool)clear
+            //Renders debug panel to DOM and adds inputStr to it
+            var curDebugHtml, debugCol;
+
+            debugCol = document.getElementById("debugCol");
+
+            //No debug col in DOM, so we'll add it.
+            if ((debugCol === null) || (debugCol.value === '')) {
+                debugCol = document.createElement("span");
+                debugCol.id = "debugCol";
+
+                document.body.appendChild(debugCol);
+            }
+
+            function fn() {
+                //Store current debug col HTML
+                curDebugHtml = debugCol.innerHTML;
+
+                //If clearing the current HTML, do that now.
+                if (clear) {
+                    curDebugHtml = "";
+                }
+
+                //Add our new string to the top of current debug HTML and populate debug col with it.
+                debugCol.innerHTML = "\n" + inputString + "\n<br>\n" + curDebugHtml;
+            }
+
+            return fn();
+        });
+            
         images = (function () {
             return {
                 image : function (gallery, subcat, title, description, filename) {
@@ -144,7 +174,7 @@
                         imgUrl = "img/examples/" + imagesArr[i].gallery + "/" + imagesArr[i].subcat + "/" + imagesArr[i].filename;
 
                         image = document.createElement("img");
-                        image.src = imgUrl + "_thumb.jpg";
+                        image.setAttribute("data-lazy", imgUrl + "_thumb.jpg");
 
                         anchor = document.createElement("a", undefined, "fancybox");
                         anchor.href = imgUrl + ".jpg";
