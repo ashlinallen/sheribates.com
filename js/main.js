@@ -3,8 +3,19 @@
 /*global $, define */
 
 //Todo: bug when switching categories after resizing
+//Todo: figure out what broke between slick 1.4 and 1.4.1 
+// - https://github.com/kenwheeler/slick/commit/e3fc23908d647bb2471c00c316ad57b15667975d
 
-//Todo: need real "about" content
+//Todo: unfilter on mobile sizes
+//Todo: fix slick arrow cutoff
+
+//Todo: contact icons on ipad
+//Todo: tab/dot display on ipad vertical
+//Todo: 5 images on ipad horizontal
+//Todo: 2 images on ipad vertical
+//Todo: ipad vertical header size
+
+//Todo: color buttons startup fan
 //Todo: favicon
 
 (function () {
@@ -157,7 +168,9 @@
             speed: 800,
             slidesToShow: 7,
             slidesToScroll: 7,
-
+            respondTo: 'window',
+            slide: 'a',
+            
             responsive: [
                 {
                     breakpoint: 1280,
