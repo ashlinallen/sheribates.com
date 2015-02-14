@@ -2,8 +2,6 @@
 /*jslint browser: true, indent: 4*/
 /*global $, define */
 
-//Todo: fix slick arrow cutoff
-
 //Todo: contact icons on ipad
 //Todo: tab/dot display on ipad vertical
 //Todo: 5 images on ipad horizontal

@@ -23,7 +23,7 @@
 .slick-next
 {
     font-size: 3vh;
-    line-height: 3vh;
+    line-height: 3.6vh;
 
     position: absolute;
     top: 50%;
@@ -32,7 +32,7 @@
 
     width: 3vh;
     height: 3vh;
-    margin-top: -10px;
+    margin-top: -1vh;
     padding: 0;
 
     cursor: pointer;
@@ -65,12 +65,10 @@
 {
     font-family: 'slick';
 
-    opacity: .5;
+    opacity: .75;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
-    text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
 }
 
 .slick-prev
@@ -92,10 +90,6 @@
 }
 
 /* Dots */
-.slick-slider
-{
-    margin-bottom: 30px;
-}
 
 .slick-dots
 {
