@@ -479,7 +479,12 @@
             $(element).attr("data-slick-index",index);
         });
 
-        _.$slidesCache = _.$slides;
+        //buildOut shouldn't change the slidesCache if it already exists.
+        //Otherwise if the slides have been filtered before a resize, 
+        //slidesCache gets overwritten with the filtered set of slides.
+        if (_.$slidesCache === null) {
+            _.$slidesCache = _.$slides;
+        }
 
         _.$slider.addClass('slick-slider');
 
@@ -555,6 +560,12 @@
                     if (targetBreakpoint !== _.activeBreakpoint) {
                         _.activeBreakpoint =
                             targetBreakpoint;
+                        if(_.breakpointSettings[targetBreakpoint].unfilter === true) {
+                            _.unfilterSlides();
+                        }
+                        if(_.breakpointSettings[targetBreakpoint].filter) {
+                            _.slickFilter(_.breakpointSettings[targetBreakpoint].filter);
+                        }
                         if(_.breakpointSettings[targetBreakpoint] === "unslick") {
                             _.unslick();
                         } else {
@@ -568,6 +579,12 @@
                     }
                 } else {
                     _.activeBreakpoint = targetBreakpoint;
+                    if(_.breakpointSettings[targetBreakpoint].unfilter === true) {
+                        _.unfilterSlides();
+                    }
+                    if(_.breakpointSettings[targetBreakpoint].filter) {
+                        _.slickFilter(_.breakpointSettings[targetBreakpoint].filter);
+                    }
                     if(_.breakpointSettings[targetBreakpoint] === "unslick") {
                         _.unslick();
                     } else {
@@ -900,15 +917,6 @@
         
         max = _.options.infinite === false ? _.slideCount - _.options.slidesToShow + 1 : _.slideCount;
         if (_.options.centerMode === true) max = _.slideCount;
-        
-        //if(_.options.infinite === false) {
-        //    max = _.slideCount - _.options.slidesToShow + 1;
-        //    if (_.options.centerMode === true) max = _.slideCount;
-        //} else {
-        //    breakPoint = _.slideCount * -1;
-        //    counter = _.slideCount * -1;
-        //    max = _.slideCount * 2;
-        //}
 
         while (breakPoint < max){
             indexes.push(breakPoint);
@@ -1086,7 +1094,7 @@
                     _.windowWidth = $(window).width();
                     _.checkResponsive();
                     _.setPosition();
-                }, 50);
+                }, 25);
             }
         });
 
@@ -1520,6 +1528,7 @@
 
         var _ = this;
         _.options[option] = value;
+        _.originalSettings[option] = value; //Overwrite originalSetting value with new value. This fixed dot tracking issue with responsive.
 
         if (refresh === true) {
             _.unload();

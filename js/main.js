@@ -2,11 +2,6 @@
 /*jslint browser: true, indent: 4*/
 /*global $, define */
 
-//Todo: bug when switching categories after resizing
-//Todo: figure out what broke between slick 1.4 and 1.4.1 
-// - https://github.com/kenwheeler/slick/commit/e3fc23908d647bb2471c00c316ad57b15667975d
-
-//Todo: unfilter on mobile sizes
 //Todo: fix slick arrow cutoff
 
 //Todo: contact icons on ipad
@@ -20,7 +15,7 @@
 (function () {
     "use strict";
 
-    var requires, images, imagesArr;
+    var requires, images, imagesArr, isMobile;
 
     requires = ["jquery", "fancybox", "fancybox_thumbs", "slick"];//, "analytics"
 
@@ -46,36 +41,7 @@
     define(requires, function ($) {
         imagesArr = [];
 
-        var debug = (function (inputString, clear) {
-            //Input: (string)inputString, (bool)clear
-            //Renders debug panel to DOM and adds inputStr to it
-            var curDebugHtml, debugCol;
-
-            debugCol = document.getElementById("debugCol");
-
-            //No debug col in DOM, so we'll add it.
-            if ((debugCol === null) || (debugCol.value === '')) {
-                debugCol = document.createElement("span");
-                debugCol.id = "debugCol";
-
-                document.body.appendChild(debugCol);
-            }
-
-            function fn() {
-                //Store current debug col HTML
-                curDebugHtml = debugCol.innerHTML;
-
-                //If clearing the current HTML, do that now.
-                if (clear) {
-                    curDebugHtml = "";
-                }
-
-                //Add our new string to the top of current debug HTML and populate debug col with it.
-                debugCol.innerHTML = "\n" + inputString + "\n<br>\n" + curDebugHtml;
-            }
-
-            return fn();
-        });
+        isMobile = false;
             
         images = (function () {
             return {
@@ -174,7 +140,7 @@
                         imgUrl = "img/examples/" + imagesArr[i].gallery + "/" + imagesArr[i].subcat + "/" + imagesArr[i].filename;
 
                         image = document.createElement("img");
-                        image.setAttribute("data-lazy", imgUrl + "_thumb.jpg");
+                        image.setAttribute("src", imgUrl + "_thumb.jpg");
 
                         anchor = document.createElement("a", undefined, "fancybox");
                         anchor.href = imgUrl + ".jpg";
@@ -190,65 +156,52 @@
 
         images.init();
 
-        $(".image_slider").slick({
+        var designSlider = $('#design .image_slider');
+        var illustrationSlider = $('#illustration .image_slider');
+
+        $(illustrationSlider).slick({
             lazyLoad: 'ondemand',
             dots: true,
             infinite: true,
             arrows: true,
+            slide: 'a',
             speed: 800,
             slidesToShow: 7,
             slidesToScroll: 7,
-            respondTo: 'window',
-            slide: 'a',
+            appendDots: $("#FanArt"),
             
             responsive: [
                 {
-                    breakpoint: 1280,
+                    breakpoint: 1950,
                     settings: {
-                        dots: true,
-                        infinite: true,
-                        speed: 200,
                         slidesToShow: 6,
                         slidesToScroll: 6
                     }
                 },
-
                 {
-                    breakpoint: 1024,
+                    breakpoint: 1700,
                     settings: {
-                        dots: true,
-                        infinite: true,
-                        speed: 200,
                         slidesToShow: 5,
                         slidesToScroll: 5
                     }
                 },
-
                 {
-                    breakpoint: 900,
+                    breakpoint: 1450,
                     settings: {
-                        dots: true,
-                        infinite: true,
-                        speed: 200,
                         slidesToShow: 4,
                         slidesToScroll: 4
                     }
                 },
-
                 {
-                    breakpoint: 800,
+                    breakpoint: 1200,
                     settings: {
-                        dots: false,
-                        speed: 200,
                         slidesToShow: 3,
                         slidesToScroll: 3
                     }
                 },
-
                 {
-                    breakpoint: 600,
+                    breakpoint: 950,
                     settings: {
-                        dots: false,
                         speed: 200,
                         slidesToShow: 2,
                         slidesToScroll: 2
@@ -256,29 +209,79 @@
                 }
             ]
         });
-
-        $('#design .image_slider').slick('slickFilter', '[rel="LogoAndWeb"]');
-        $('#design .image_slider').slick('slickSetOption', 'appendDots', $('#design nav ul li:first-child'), true);
-
-        $('#illustration .image_slider').slick('slickFilter', '[rel="FanArt"]');
-        $('#illustration .image_slider').slick('slickSetOption', 'appendDots', $('#illustration nav ul li:first-child'), true);
+        
+        $(designSlider).slick({
+            lazyLoad: 'ondemand',
+            dots: true,
+            infinite: true,
+            arrows: true,
+            slide: 'a',
+            speed: 800,
+            slidesToShow: 7,
+            slidesToScroll: 7,
+            appendDots: $("#LogoAndWeb"),
+            
+            responsive: [
+                {
+                    breakpoint: 1950,
+                    settings: {
+                        slidesToShow: 6,
+                        slidesToScroll: 6
+                    }
+                },
+                {
+                    breakpoint: 1700,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 5
+                    }
+                },
+                {
+                    breakpoint: 1450,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                },
+                {
+                    breakpoint: 950,
+                    settings: {
+                        speed: 200,
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                }
+            ]
+        });
+        
+        if (!isMobile) {
+            designSlider.slick('slickFilter', '[rel="LogoAndWeb"]');
+            illustrationSlider.slick('slickFilter', '[rel="FanArt"]');
+        }
 
         $('nav ul li a').on('click', function () {
             var dataFilter, targetcl;
 
-            dataFilter = $(this).attr("data-filter");
+            dataFilter = $(this).parent().attr("id");
 
             if ($(this).parents('#design').length) {
-                targetcl = "#design";
+                targetcl = designSlider;
             } else {
-                targetcl = "#illustration";
+                targetcl = illustrationSlider;
             }
 
             $(this).parent().siblings().children("a").removeClass("selected");
             $(this).addClass("selected");
 
-            $(targetcl + ' .image_slider').slick('slickFilter', '[rel="' + dataFilter + '"]');
-            $(targetcl + ' .image_slider').slick('slickSetOption', 'appendDots', $(this).parent(), true);
+            targetcl.slick('slickFilter', '[rel="' + dataFilter + '"]');
+            targetcl.slick('slickSetOption', 'appendDots', $("#" + dataFilter), true);
         });
 
         $(".image_slider a").fancybox(

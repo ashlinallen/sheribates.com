@@ -120,8 +120,8 @@ font-family: 'ralewaythin';
 }
 
 .scheme_t2 {
-    @primary: @dodger;
-    @secondary: @portage;
+    @primary: @portage;
+    @secondary: @dodger;
         header>div {
         >h1 {
             color:@secondary;
@@ -268,8 +268,8 @@ font-family: 'ralewaythin';
 }
 
 .scheme_t4 {
-    @primary: @java;
-    @secondary: @purple;
+    @primary: @purple;
+    @secondary: @java;
     header>div {
         >h1 {
             color:@secondary;
@@ -352,7 +352,7 @@ body>header {
     background-image:url('../img/swirl_pattern.png');
     background-repeat:repeat;
     background-size: 247px;
-    height:30%;
+    height:27.5%;
     width:100%;
     overflow:hidden;
     position:relative;
@@ -511,18 +511,19 @@ main {
 }
 
 footer {
-    height:10%;
+    height:12.5%;
     width:100%;
     background-color: #090a0f;
-    padding-top: 1.25vh;
+    overflow:hidden;
 
-    div {
+    >div {
         background-image:url('../img/swirl_pattern_dark.png');
         background-repeat:repeat-x;
         background-size: 247px;
         width:100%;
-        height:99.25%;
+        height:90%;
         position:relative;
+        margin-top: 1vh;
 
         aside {
             font-family: 'geosanslightregular';
@@ -532,7 +533,7 @@ footer {
             background-color:#222629;
             height:100%;
             position:relative;
-            left:-52vh;
+            left:-51vh;
             transition: 1s;
             margin-left: -3px;
 
@@ -543,20 +544,20 @@ footer {
 
             p {
                 padding: 1vh;
-                margin-right:3vh;
+                margin-right:4vh;
                 line-height:1.5vh;
                 font-size:1.5vh;
             }
 
             .tab {
                 position: absolute;
-                width: 3vh;
+                width: 4vh;
                 height: 100%;
                 right: 0;
                 top: 0;
                 cursor:pointer;
                 background-image:url('../img/about-me-tab.png');
-                background-size: auto 100%;
+                background-size: 100% 100%;
                 background-repeat: no-repeat;
                 background-position: center center;
             }
@@ -628,7 +629,7 @@ footer {
 }
 
 @media 
-screen and (max-width: 800px) {
+screen and (max-width: 950px) {
     body>header {
         height:20% !important;
         >div {
@@ -661,7 +662,7 @@ screen and (max-width: 800px) {
     }
 
     aside {
-    display:none;
+        display:none;
         left: 0 !important;
         width:90% !important;
 
@@ -669,5 +670,9 @@ screen and (max-width: 800px) {
             font-size:2vw !important;
             line-height:2vw !important;
         }
+    }
+
+    address {
+        top:40% !important;
     }
 }
