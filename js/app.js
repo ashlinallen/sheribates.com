@@ -15,11 +15,10 @@ requirejs.config({
             'vendor/fancybox/jquery.fancybox-thumbs'
         ],
         slick: [
-            //'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.4.0/slick.min',
             'vendor/slick/slick'
         ],
         analytics: [
-            'ga'
+            'vendor/ga'
         ]
     },
 
