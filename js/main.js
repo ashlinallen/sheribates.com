@@ -308,6 +308,8 @@
             $('body').removeClass();
             $('body').addClass('scheme_' + $(this).attr('class'));
         });
+        
+        $(document).bind('touchmove', false);
     });
 
 }());
