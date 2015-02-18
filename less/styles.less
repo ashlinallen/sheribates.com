@@ -366,7 +366,6 @@ body>header {
         position:absolute;
         right:0;
         top:50%;
-        margin-top:-4vh;
             
         div {
             height:1.75vh;
@@ -697,8 +696,22 @@ screen and (max-height: 900px) {
     }
 }
 
+/* iPad landscape-specific styles */
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
     body {
         height:98%;
+    }
+    
+    footer {
+        >div {
+            aside {
+                left:0;
+                transition: 0s;
+                p {
+                    line-height: 1.6vh;
+                    font-size: 1.3vh;
+                }
+            }
+        }
     }
 }

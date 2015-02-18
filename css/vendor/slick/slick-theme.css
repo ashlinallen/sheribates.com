@@ -165,6 +165,8 @@
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
+    text-shadow:0px 0px 3px #000000;
 }
 .slick-dots li.slick-active button:before
 {
