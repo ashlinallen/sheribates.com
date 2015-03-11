@@ -8,6 +8,8 @@
 //Todo: 2 images on ipad vertical
 //Todo: ipad vertical header size
 //Todo: color buttons startup fan
+//Todo: Unfilter ipad sizes
+//Todo: Fix broken layout on horizontal ipad
 
 (function () {
     "use strict";
@@ -176,7 +178,7 @@
             speed: 800,
             slidesToShow: 7,
             slidesToScroll: 7,
-            appendDots: $("#FanArt"),
+            appendDots: $("#Original"),
             
             responsive: [
                 {
@@ -271,7 +273,7 @@
         
         if (!isMobile) {
             designSlider.slick('slickFilter', '[rel="LogoAndWeb"]');
-            illustrationSlider.slick('slickFilter', '[rel="FanArt"]');
+            illustrationSlider.slick('slickFilter', '[rel="Original"]');
         }
 
         $('nav ul li a').on('click', function () {
@@ -279,7 +281,7 @@
 
             dataFilter = $(this).parent().attr("id");
 
-            if ($(this).parents('#design').length) {
+            if ($(this).parents('#design').length > 0) {
                 targetcl = designSlider;
             } else {
                 targetcl = illustrationSlider;
@@ -298,19 +300,16 @@
                     type : 'inside'
                 },
                 //afterLoad: function(current, previous) {
-                //    if (previous) {
-                //        if ((current.index == previous.index+1) || (current.index < previous.index-1)) 
-                //        {
-                //            $('#illustration .image_slider').slick('slickNext'); 
-                //        }
-                //        if ((current.index == previous.index-1) || (current.index > previous.index+1))
-                //        {
-                //            $('#illustration .image_slider').slick('slickPrev');
-                //        }
+                //    var targetcl;
+                //    if ($(this).parents('#design').length > 0) {
+                //        targetcl = designSlider;
+                //    } else {
+                //        targetcl = illustrationSlider;
                 //    }
+                //    targetcl.slick('slickGoTo', current.index);
                 //},
-                nextEffect  : 'fade',
-                prevEffect  : 'fade'
+                nextEffect  : 'elastic',
+                prevEffect  : 'elastic'
             }
         );
 
