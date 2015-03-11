@@ -22,17 +22,17 @@
 .slick-prev,
 .slick-next
 {
+    line-height: 100%;
+    
     font-size: 3vh;
-    line-height: 3vh;
 
     position: absolute;
-    top: 50%;
+    top: 0;
 
+    width: 4vh;
     display: block;
 
-    width: 3vh;
-    height: 3vh;
-    margin-top: -1vh;
+    height: 100%;
     padding: 0;
 
     cursor: pointer;
@@ -69,11 +69,17 @@
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+          top: 50%;
+          -webkit-transform: translateY(-50%) translateX(-50%);
+          -ms-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+          left: 50%;
+    position:absolute;
 }
 
 .slick-prev
 {
-    left: 1vh;
+    left: 0;
 }
 .slick-prev:before
 {
@@ -82,7 +88,7 @@
 
 .slick-next
 {
-    right: 1vh;
+    right:0;
 }
 .slick-next:before
 {

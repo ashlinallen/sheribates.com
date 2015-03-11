@@ -7,7 +7,6 @@
 //Todo: 5 images on ipad horizontal
 //Todo: 2 images on ipad vertical
 //Todo: ipad vertical header size
-
 //Todo: color buttons startup fan
 
 (function () {
@@ -54,9 +53,9 @@
                 },
 
                 init : function () {
-                    var slickContainer, imgUrl, image, anchor, i;
+                    var slickContainer, imgUrl, image, anchor, i, em, combinedTitle;
 
-                    new images.image("design", "Email", "Email Design |Vehicle Appointment Confirmation", "This is an automated email, sent to clients' customers to confirm their vehicle service appointment.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Appt-Confirmation_v01_copy_video");
+                    new images.image("design", "Email", "Email Design | Vehicle Appointment Confirmation", "This is an automated email, sent to clients' customers to confirm their vehicle service appointment.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Appt-Confirmation_v01_copy_video");
                     new images.image("design", "Email", "Email Design | New Vehicle Quote for Audi Owners", "This email was designed adhereing to Audi brand guidelines.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Audi-Quote");
                     new images.image("design", "Email", "Email/Print Design | AutoQuote Lane Sheet", "This piece is intended to be a printout for employees in service lanes at vehicle dealerships. It shows a service lane customer a quote for a new vehicle, including the trade-in amount for their current vehicle.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "AutoQuote-Lanesheet_v02");
                     new images.image("design", "Email", "Email Design | AutoQuote Holiday Template", "This is a holiday piece for AutoLoop's AutoQuote brand.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Holiday-Quote_02");
@@ -129,6 +128,8 @@
                     new images.image("illustration", "SketchesAndOther", "", "", "vine-angel");
 
                     for (i = 0; i < imagesArr.length; i += 1) {
+                        combinedTitle = "";
+
                         if (imagesArr[i].gallery === "design") {
                             slickContainer = $('#design .image_slider');
                         } else {
@@ -141,11 +142,20 @@
                         image.setAttribute("src", imgUrl + "_thumb.jpg");
 
                         anchor = document.createElement("a", undefined, "fancybox");
+                        
+                        if ((imagesArr[i].title !== undefined) && (imagesArr[i].title !== "")) {
+                            em = document.createElement("em");
+                            em.innerText = imagesArr[i].title;
+                            combinedTitle += em.outerHTML;
+                        }
+                        
+                        combinedTitle += imagesArr[i].description;
+                        
                         anchor.href = imgUrl + ".jpg";
-                        anchor.setAttribute("title", imagesArr[i].description);
+                        anchor.setAttribute("data-fancybox-title", combinedTitle);
                         anchor.setAttribute("rel", imagesArr[i].subcat);
                         anchor.appendChild(image);
-
+                        
                         slickContainer.append(anchor);
                     }
                 }

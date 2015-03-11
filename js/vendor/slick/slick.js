@@ -1341,9 +1341,7 @@
             _.currentSlide = _.currentSlide - _.options.slidesToScroll;
         }
 
-        if (_.slideCount <= _.options.slidesToShow) {
-            _.currentSlide = 0;
-        }
+        _.currentSlide = 0;
 
         _.setProps();
 
