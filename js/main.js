@@ -9,6 +9,7 @@
 //Todo: 2 images on ipad vertical
 //Todo: ipad vertical header size
 //Todo: Fix broken layout on horizontal ipad
+//Todo: unfilter on ipad
 
 (function () {
     "use strict";
@@ -60,7 +61,6 @@
                     new images.image("design", "LogoAndWeb", "Logo Design | Cognition", "A logo refresh for Cognition, a photography company.", "Cognition_logo");
                     new images.image("design", "LogoAndWeb", "Website Design | DanimalCannon.com", "I designed this site for Danimal Cannon, an indie chiptune musician/frontman of Metroid Metal. This site is actually a tumblr, which better suited the client's needs.", "dan-site");
                     new images.image("design", "LogoAndWeb", "Website Design | SheriBates.com", "This is my original website design!", "sheri-bates-original-site");
-                    new images.image("design", "LogoAndWeb", "Website Design | SureIllDrawThat.com", "This website was part of a full branding  project for a client who needed streaming functionality as well as a submission and voting system.", "sidt-site");
                     new images.image("design", "LogoAndWeb", "Website Design | AmiiboTracker.com", "Amiibo Tracker is a personal project between myself and developer Ashlin Allen, meant to help collectors keep track of their Amiibos as well as see where they can be purchased and pre-ordered. This website is still in development.", "amiibotracker-v01");
                     new images.image("design", "LogoAndWeb", "Website Design | Be The People", "Be the People was a personal project between myself and developer Ashlin Allen.", "be-the-people");
                     new images.image("design", "Email", "Email Design | Vehicle Appointment Confirmation", "This is an automated email, sent to clients' customers to confirm their vehicle service appointment.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Appt-Confirmation_v01_copy_video");
