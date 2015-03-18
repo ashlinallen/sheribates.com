@@ -561,7 +561,7 @@
                         _.activeBreakpoint =
                             targetBreakpoint;
                         if(_.breakpointSettings[targetBreakpoint].unfilter === true) {
-                            _.unfilterSlides();
+                            _.slickUnfilter();
                         }
                         if(_.breakpointSettings[targetBreakpoint].filter) {
                             _.slickFilter(_.breakpointSettings[targetBreakpoint].filter);
@@ -580,7 +580,7 @@
                 } else {
                     _.activeBreakpoint = targetBreakpoint;
                     if(_.breakpointSettings[targetBreakpoint].unfilter === true) {
-                        _.unfilterSlides();
+                        _.slickUnfilter();
                     }
                     if(_.breakpointSettings[targetBreakpoint].filter) {
                         _.slickFilter(_.breakpointSettings[targetBreakpoint].filter);
@@ -2058,7 +2058,6 @@
             _.$slidesCache.appendTo(_.$slideTrack);
 
             _.reinit();
-
         }
 
     };

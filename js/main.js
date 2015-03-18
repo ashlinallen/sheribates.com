@@ -2,13 +2,12 @@
 /*jslint browser: true, indent: 4*/
 /*global $, define */
 
+//Todo: color buttons startup fan
 //Todo: contact icons on ipad
 //Todo: tab/dot display on ipad vertical
 //Todo: 5 images on ipad horizontal
 //Todo: 2 images on ipad vertical
 //Todo: ipad vertical header size
-//Todo: color buttons startup fan
-//Todo: Unfilter ipad sizes
 //Todo: Fix broken layout on horizontal ipad
 
 (function () {
@@ -56,7 +55,14 @@
 
                 init : function () {
                     var slickContainer, imgUrl, image, anchor, i, em, combinedTitle;
-
+                    new images.image("design", "LogoAndWeb", "YouTube Channel Art |  8th Place LP", "Logo and channel design for 8th Place LP.", "8th-place_Channel-Art");
+                    new images.image("design", "LogoAndWeb", "Website Design | AshlinAllen.com", "This website is a portfolio site for Ashlin Allen, the extremely talented front-end developer behind my website! I designed the graphics, animation and layout based on Ashlin's vision. <a href='http://ashlinallen.com'>AshlinAllen.com</a>", "ash-site");
+                    new images.image("design", "LogoAndWeb", "Logo Design | Cognition", "A logo refresh for Cognition, a photography company.", "Cognition_logo");
+                    new images.image("design", "LogoAndWeb", "Website Design | DanimalCannon.com", "I designed this site for Danimal Cannon, an indie chiptune musician/frontman of Metroid Metal. This site is actually a tumblr, which better suited the client's needs.", "dan-site");
+                    new images.image("design", "LogoAndWeb", "Website Design | SheriBates.com", "This is my original website design!", "sheri-bates-original-site");
+                    new images.image("design", "LogoAndWeb", "Website Design | SureIllDrawThat.com", "This website was part of a full branding  project for a client who needed streaming functionality as well as a submission and voting system.", "sidt-site");
+                    new images.image("design", "LogoAndWeb", "Website Design | AmiiboTracker.com", "Amiibo Tracker is a personal project between myself and developer Ashlin Allen, meant to help collectors keep track of their Amiibos as well as see where they can be purchased and pre-ordered. This website is still in development.", "amiibotracker-v01");
+                    new images.image("design", "LogoAndWeb", "Website Design | Be The People", "Be the People was a personal project between myself and developer Ashlin Allen.", "be-the-people");
                     new images.image("design", "Email", "Email Design | Vehicle Appointment Confirmation", "This is an automated email, sent to clients' customers to confirm their vehicle service appointment.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Appt-Confirmation_v01_copy_video");
                     new images.image("design", "Email", "Email Design | New Vehicle Quote for Audi Owners", "This email was designed adhereing to Audi brand guidelines.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Audi-Quote");
                     new images.image("design", "Email", "Email/Print Design | AutoQuote Lane Sheet", "This piece is intended to be a printout for employees in service lanes at vehicle dealerships. It shows a service lane customer a quote for a new vehicle, including the trade-in amount for their current vehicle.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "AutoQuote-Lanesheet_v02");
@@ -67,14 +73,6 @@
                     new images.image("design", "Email", "Email Design | Subaru - BRZ Accessories", "This is one of several pieces I designed while working closely with Subaru's brand agency, Carmichael Lynch.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Subaru-Newsletter_v03");
                     new images.image("design", "Email", "Email Newsletter Design | Subaru Newsletter 1", "Subaru requested a few newsletter designs from AutoLoop, and this was one of several I provided.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Subaru-Newsletter_v04a");
                     new images.image("design", "Email", "Email Newsletter Design | Subaru Newsletter 2", "Subaru requested a few newsletter designs from AutoLoop, and this was one of several I provided.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Subaru_BRZ-Accessories_05-07-13_1");
-                    new images.image("design", "LogoAndWeb", "YouTube Channel Art |  8th Place LP", "Logo and channel design for 8th Place LP.", "8th-place_Channel-Art");
-                    new images.image("design", "LogoAndWeb", "Website Design | AshlinAllen.com", "This website is a portfolio site for Ashlin Allen, the extremely talented front-end developer behind my website! I designed the graphics, animation and layout based on Ashlin's vision. <a href='http://ashlinallen.com'>AshlinAllen.com</a>", "ash-site");
-                    new images.image("design", "LogoAndWeb", "Logo Design | Cognition", "A logo refresh for Cognition, a photography company.", "Cognition_logo");
-                    new images.image("design", "LogoAndWeb", "Website Design | DanimalCannon.com", "I designed this site for Danimal Cannon, an indie chiptune musician/frontman of Metroid Metal. This site is actually a tumblr, which better suited the client's needs.", "dan-site");
-                    new images.image("design", "LogoAndWeb", "Website Design | SheriBates.com", "This is my original website design!", "sheri-bates-original-site");
-                    new images.image("design", "LogoAndWeb", "Website Design | SureIllDrawThat.com", "This website was part of a full branding  project for a client who needed streaming functionality as well as a submission and voting system.", "sidt-site");
-                    new images.image("design", "LogoAndWeb", "Website Design | AmiiboTracker.com", "Amiibo Tracker is a personal project between myself and developer Ashlin Allen, meant to help collectors keep track of their Amiibos as well as see where they can be purchased and pre-ordered. This website is still in development.", "amiibotracker-v01");
-                    new images.image("design", "LogoAndWeb", "Website Design | Be The People", "Be the People was a personal project between myself and developer Ashlin Allen.", "be-the-people");
                     new images.image("design", "Personal", "Facebook Cover Photo | Mountains", "", "FB-header-01");
                     new images.image("design", "Personal", "Facebook Cover Photo | Satellite", "", "FB-Header-Satellite");
                     new images.image("design", "Personal", "Facebook Cover Photo | VHS", "", "FB-Header-VHS");
@@ -91,14 +89,6 @@
                     new images.image("design", "Print", "Shirt Design | Danimal Cannon", "This shirt was designed for Danimal Cannon's 2012 tour.", "Shirt_Dan");
                     new images.image("design", "Print", "Brochure Design | Subaru Schedule Connect (detail)", "This brochure was requested by Subaru to detail their Schedule Connect program.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Subaru-Schedule-Connect-Details");
                     new images.image("design", "Print", "Brochure Design | Subaru Schedule Connect", "This brochure was requested by Subaru to detail their Schedule Connect program.<br><i>Designed while I worked as Art Director at AutoLoop</i>", "Subaru-Schedule-Connect-Mockup");
-                    new images.image("illustration", "FanArt", "", "", "journey");
-                    new images.image("illustration", "FanArt", "", "", "Link");
-                    new images.image("illustration", "FanArt", "", "", "mega-man");
-                    new images.image("illustration", "FanArt", "", "", "peachy");
-                    new images.image("illustration", "FanArt", "", "", "pikmin");
-                    new images.image("illustration", "FanArt", "", "", "Rini-Ink");
-                    new images.image("illustration", "FanArt", "", "", "sailor-moon-flats");
-                    new images.image("illustration", "FanArt", "", "", "Sailor-Moon-Redux-Flats");
                     new images.image("illustration", "Original", "", "", "devil");
                     new images.image("illustration", "Original", "", "", "dino");
                     new images.image("illustration", "Original", "", "", "disaster");
@@ -128,7 +118,15 @@
                     new images.image("illustration", "SketchesAndOther", "", "", "satan");
                     new images.image("illustration", "SketchesAndOther", "", "", "Turnip");
                     new images.image("illustration", "SketchesAndOther", "", "", "vine-angel");
-
+                    new images.image("illustration", "FanArt", "", "", "journey");
+                    new images.image("illustration", "FanArt", "", "", "Link");
+                    new images.image("illustration", "FanArt", "", "", "mega-man");
+                    new images.image("illustration", "FanArt", "", "", "peachy");
+                    new images.image("illustration", "FanArt", "", "", "pikmin");
+                    new images.image("illustration", "FanArt", "", "", "Rini-Ink");
+                    new images.image("illustration", "FanArt", "", "", "sailor-moon-flats");
+                    new images.image("illustration", "FanArt", "", "", "Sailor-Moon-Redux-Flats");
+                    
                     for (i = 0; i < imagesArr.length; i += 1) {
                         combinedTitle = "";
 
@@ -185,28 +183,32 @@
                     breakpoint: 1950,
                     settings: {
                         slidesToShow: 6,
-                        slidesToScroll: 6
+                        slidesToScroll: 6,
+                        filter: '[rel="Original"]'
                     }
                 },
                 {
                     breakpoint: 1700,
                     settings: {
                         slidesToShow: 5,
-                        slidesToScroll: 5
+                        slidesToScroll: 5,
+                        filter: '[rel="Original"]'
                     }
                 },
                 {
                     breakpoint: 1450,
                     settings: {
                         slidesToShow: 4,
-                        slidesToScroll: 4
+                        slidesToScroll: 4,
+                        filter: '[rel="Original"]'
                     }
                 },
                 {
                     breakpoint: 1200,
                     settings: {
                         slidesToShow: 3,
-                        slidesToScroll: 3
+                        slidesToScroll: 3,
+                        filter: '[rel="Original"]'
                     }
                 },
                 {
@@ -214,7 +216,8 @@
                     settings: {
                         speed: 200,
                         slidesToShow: 2,
-                        slidesToScroll: 2
+                        slidesToScroll: 2,
+                        unfilter: true
                     }
                 }
             ]
@@ -236,28 +239,32 @@
                     breakpoint: 1950,
                     settings: {
                         slidesToShow: 6,
-                        slidesToScroll: 6
+                        slidesToScroll: 6,
+                        filter: '[rel="LogoAndWeb"]'
                     }
                 },
                 {
                     breakpoint: 1700,
                     settings: {
                         slidesToShow: 5,
-                        slidesToScroll: 5
+                        slidesToScroll: 5,
+                        filter: '[rel="LogoAndWeb"]'
                     }
                 },
                 {
                     breakpoint: 1450,
                     settings: {
                         slidesToShow: 4,
-                        slidesToScroll: 4
+                        slidesToScroll: 4,
+                        filter: '[rel="LogoAndWeb"]'
                     }
                 },
                 {
                     breakpoint: 1200,
                     settings: {
                         slidesToShow: 3,
-                        slidesToScroll: 3
+                        slidesToScroll: 3,
+                        filter: '[rel="LogoAndWeb"]'
                     }
                 },
                 {
@@ -265,7 +272,8 @@
                     settings: {
                         speed: 200,
                         slidesToShow: 2,
-                        slidesToScroll: 2
+                        slidesToScroll: 2,
+                        unfilter: true
                     }
                 }
             ]

@@ -356,6 +356,14 @@ html, body {
     overflow: hidden;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
     background-color:#000;
 }
@@ -384,9 +392,14 @@ body>header {
             background-size:cover;
             cursor:pointer;
             
+            -webkit-animation: paletteFan 0.5s 1;
+            -moz-animation: paletteFan 0.5s 1;
+            -o-animation: paletteFan 0.5s 1;
+            animation: paletteFan 0.5s 1;
+
             &:hover  {
                 transition: 0.1s;
-                right:0vh;
+                right:0;
             }
             
             transition: 0.25s;
@@ -398,16 +411,28 @@ body>header {
             &.t2 {
                 top:2vh;
                 background-image:url('../img/cs-blue.png');
+                -webkit-animation-delay: 0.1s;
+                animation-delay: 0.1s;
+                -o-animation-delay: 0.1s;
+                -moz-animation-delay: 0.1s;
             }
             
             &.t3 {
                 top:4vh;
                 background-image:url('../img/cs-green.png');
+                -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s;
+                -o-animation-delay: 0.2s;
+                -moz-animation-delay: 0.2s;
             }
             
             &.t4 {
                 top:6vh;
                 background-image:url('../img/cs-cyan.png');
+                -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s;
+                -o-animation-delay: 0.3s;
+                -moz-animation-delay: 0.3s;
             }
         }
     }
@@ -551,7 +576,6 @@ footer {
             position:relative;
             left:-51vh;
             transition: 1s;
-            margin-left: -3px;
 
             &:hover  {
                 transition: 1s;
@@ -559,24 +583,25 @@ footer {
             }
 
             p {
-                padding: 0.5vh 1vh 1vh 1vh;
-                margin-right: 4vh;
                 line-height: 1.75vh;
-                font-size: 1.5vh;
                 font-weight: 600;
+                padding: 0.5vh 4.5vh 0 0.5vh;
+                line-height: 1.45vh;
+                font-size: 1.25vh;
             }
 
             .tab {
                 position: absolute;
                 width: 4vh;
-                height: 100%;
+                bottom: 0;
                 right: 0;
                 top: 0;
                 cursor:pointer;
                 background-image:url('../img/about-me-tab.png');
-                background-size: 100% 100%;
+                background-size: auto 100%;
                 background-repeat: no-repeat;
                 background-position: center center;
+                background-color: #0D0D0D;
             }
         }
     }
@@ -590,11 +615,11 @@ address {
     height:100%;
 
     ul {
-        height:100%;
+        height:95%;
         
         li {
             text-align:right;
-            width:11vw;
+            width:17vh;
             height:33%;
             display:block;
             float:left;
@@ -602,11 +627,11 @@ address {
             font-family: geosanslightregular;
             color:#fff;
             line-height:15px;
-            font-size:1.25vw;
+            font-size:2vh;
             
             div {
                 right:0;
-                padding-right:5%;
+                padding-right:10%;
                 position: relative;
                 top: 50%;
                 -webkit-transform: translateY(-50%);
@@ -623,12 +648,12 @@ address {
                 background-position:center center;
                 
                 display:block;
-                width:1.75vw;
+                width: 3vh;
                 float:left;
                 line-height:25px;
-                margin-right:0.4vw;
+                margin-right: .6vh;
                 position: relative;
-                z-index:1;
+                z-index: 1;
                 top: 50%;
                 -webkit-transform: translateY(-50%);
                 -ms-transform: translateY(-50%);
@@ -694,6 +719,7 @@ address {
     }
 }
 
+
 @media 
 screen and (max-width: 950px) {
     body>header {
@@ -736,20 +762,46 @@ screen and (max-width: 950px) {
         height:10% !important;
     }
 
-    aside {
-        display:none;
-        left: 0 !important;
-        width:90% !important;
+    address {
+        ul {
+            height:90%;
 
-        p {
-            line-height: 1.6vh;
-            font-size: 1.3vh;
+            li {
+                width: 13vh;
+                font-size:1.5vh;
+
+                a {
+                    width: 2.25vh;
+                    margin-right: .5vh;
+                }
+            }
         }
     }
-    
+
     .fancybox-title {
         display:none !important;
     }
+}
+
+@-webkit-keyframes paletteFan {
+    0%   { right:-1.75vh; }
+    50%   { right: 0; }
+    100% { right:-1.75vh; }
+}
+@-moz-keyframes paletteFan {
+    0%   { right:-1.75vh; }
+    50%   { right: 0; }
+    100% { right:-1.75vh; }
+}
+@-o-keyframes paletteFan {
+    0%   { right:-1.75vh; }
+    50%   { right: 0; }
+    100% { right:-1.75vh; }
+}
+@keyframes paletteFan {
+    0%   { right:-1.75vh; }
+    50%   { right: 0; }
+    100% { right:-1.75vh; }
 }
 
 @media 
@@ -764,6 +816,15 @@ screen and (max-height: 900px) {
     }
 }
 
+@media 
+screen and (max-width: 500px) {
+    aside {
+        display:none;
+        p {
+            font-size: 1.5vh;
+        }
+    }
+}
 /* iPad landscape-specific styles */
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
     body {

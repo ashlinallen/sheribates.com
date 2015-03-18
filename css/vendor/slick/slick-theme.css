@@ -23,13 +23,12 @@
 .slick-next
 {
     line-height: 100%;
-    
-    font-size: 3vh;
 
     position: absolute;
     top: 0;
 
-    width: 4vh;
+    width: 2.5vw;
+    min-width:15px;
     display: block;
 
     height: 100%;
@@ -69,11 +68,19 @@
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-          top: 50%;
-          -webkit-transform: translateY(-50%) translateX(-50%);
-          -ms-transform: translateY(-50%) translateX(-50%);
-          transform: translateY(-50%) translateX(-50%);
-          left: 50%;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+
+    font-size: 2vw;
+    height: 3vw;
+    width: 3vw;
+    text-align: center;
+    line-height: 3.5vw;
+    display:block;
+
     position:absolute;
 }
 
