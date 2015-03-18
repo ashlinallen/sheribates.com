@@ -566,6 +566,13 @@
                         if(_.breakpointSettings[targetBreakpoint].filter) {
                             _.slickFilter(_.breakpointSettings[targetBreakpoint].filter);
                         }
+                        if(_.breakpointSettings[targetBreakpoint].appendDots !== undefined) {
+                            _.options.appendDots = _.breakpointSettings[targetBreakpoint].appendDots;
+                        }
+                        if((_.breakpointSettings[targetBreakpoint].callback !== undefined) && 
+                            (typeof(_.breakpointSettings[targetBreakpoint].callback) === "function")) {
+                            _.breakpointSettings[targetBreakpoint].callback();
+                        }
                         if(_.breakpointSettings[targetBreakpoint] === "unslick") {
                             _.unslick();
                         } else {
@@ -584,6 +591,13 @@
                     }
                     if(_.breakpointSettings[targetBreakpoint].filter) {
                         _.slickFilter(_.breakpointSettings[targetBreakpoint].filter);
+                    }
+                    if(_.breakpointSettings[targetBreakpoint].appendDots !== undefined) {
+                        _.options.appendDots = _.breakpointSettings[targetBreakpoint].appendDots;
+                    }
+                    if((_.breakpointSettings[targetBreakpoint].callback !== undefined) && 
+                        (typeof(_.breakpointSettings[targetBreakpoint].callback) === "function")) {
+                        _.breakpointSettings[targetBreakpoint].callback();
                     }
                     if(_.breakpointSettings[targetBreakpoint] === "unslick") {
                         _.unslick();

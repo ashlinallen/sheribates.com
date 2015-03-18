@@ -184,7 +184,12 @@
                     settings: {
                         slidesToShow: 6,
                         slidesToScroll: 6,
-                        filter: '[rel="Original"]'
+                        filter: '[rel="Original"]',
+                        appendDots: $("#Original"),
+                        callback: function() {
+                            $('#design nav ul li a').removeClass();
+                            $('#Original a').addClass('selected');
+                        }
                     }
                 },
                 {
@@ -192,7 +197,12 @@
                     settings: {
                         slidesToShow: 5,
                         slidesToScroll: 5,
-                        filter: '[rel="Original"]'
+                        filter: '[rel="Original"]',
+                        appendDots: $("#Original"),
+                        callback: function() {
+                            $('#design nav ul li a').removeClass();
+                            $('#Original a').addClass('selected');
+                        }
                     }
                 },
                 {
@@ -200,7 +210,12 @@
                     settings: {
                         slidesToShow: 4,
                         slidesToScroll: 4,
-                        filter: '[rel="Original"]'
+                        filter: '[rel="Original"]',
+                        appendDots: $("#Original"),
+                        callback: function() {
+                            $('#design nav ul li a').removeClass();
+                            $('#Original a').addClass('selected');
+                        }
                     }
                 },
                 {
@@ -208,7 +223,12 @@
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 3,
-                        filter: '[rel="Original"]'
+                        filter: '[rel="Original"]',
+                        appendDots: $("#Original"),
+                        callback: function() {
+                            $('#design nav ul li a').removeClass();
+                            $('#Original a').addClass('selected');
+                        }
                     }
                 },
                 {
@@ -240,7 +260,12 @@
                     settings: {
                         slidesToShow: 6,
                         slidesToScroll: 6,
-                        filter: '[rel="LogoAndWeb"]'
+                        filter: '[rel="LogoAndWeb"]',
+                        appendDots: $("#LogoAndWeb"),
+                        callback: function() {
+                            $('#illustration nav ul li a').removeClass();
+                            $('#LogoAndWeb a').addClass('selected');
+                        }
                     }
                 },
                 {
@@ -248,7 +273,12 @@
                     settings: {
                         slidesToShow: 5,
                         slidesToScroll: 5,
-                        filter: '[rel="LogoAndWeb"]'
+                        filter: '[rel="LogoAndWeb"]',
+                        appendDots: $("#LogoAndWeb"),
+                        callback: function() {
+                            $('#illustration nav ul li a').removeClass();
+                            $('#LogoAndWeb a').addClass('selected');
+                        }
                     }
                 },
                 {
@@ -256,7 +286,12 @@
                     settings: {
                         slidesToShow: 4,
                         slidesToScroll: 4,
-                        filter: '[rel="LogoAndWeb"]'
+                        filter: '[rel="LogoAndWeb"]',
+                        appendDots: $("#LogoAndWeb"),
+                        callback: function() {
+                            $('#illustration nav ul li a').removeClass();
+                            $('#LogoAndWeb a').addClass('selected');
+                        }
                     }
                 },
                 {
@@ -264,7 +299,12 @@
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 3,
-                        filter: '[rel="LogoAndWeb"]'
+                        filter: '[rel="LogoAndWeb"]',
+                        appendDots: $("#LogoAndWeb"),
+                        callback: function() {
+                            $('#illustration nav ul li a').removeClass();
+                            $('#LogoAndWeb a').addClass('selected');
+                        }
                     }
                 },
                 {
