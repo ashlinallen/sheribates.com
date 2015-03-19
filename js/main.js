@@ -2,12 +2,9 @@
 /*jslint browser: true, indent: 4*/
 /*global $, define */
 
-//Todo: color buttons startup fan
 //Todo: contact icons on ipad
-//Todo: tab/dot display on ipad vertical
-//Todo: 5 images on ipad horizontal
+//Todo: 4 images on ipad horizontal
 //Todo: 2 images on ipad vertical
-//Todo: ipad vertical header size
 //Todo: Fix broken layout on horizontal ipad
 //Todo: unfilter on ipad
 
@@ -357,7 +354,8 @@
                 //    targetcl.slick('slickGoTo', current.index);
                 //},
                 nextEffect  : 'elastic',
-                prevEffect  : 'elastic'
+                prevEffect  : 'elastic',
+                minWidth  : 250
             }
         );
 
