@@ -354,8 +354,7 @@
                 //    targetcl.slick('slickGoTo', current.index);
                 //},
                 nextEffect  : 'elastic',
-                prevEffect  : 'elastic',
-                minWidth  : 250
+                prevEffect  : 'elastic'
             }
         );
 
