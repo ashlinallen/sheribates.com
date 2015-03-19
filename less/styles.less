@@ -4,15 +4,8 @@ font-family: 'dekar_lightregular';
 font-family: 'ralewaythin';
 */
 
-#debugCol {
-    height:100%;
-    width:100px;
-    position:absolute;
-    display:inline-block;
-    z-index:100;
-    top:0;
-    background-color:#c0c0c0;
-}
+@mercury: #e4e4e4;
+
 @orange: #ffa800;
 @violet: #f23779;
 
@@ -25,7 +18,22 @@ font-family: 'ralewaythin';
 @java: #15C9CB;
 @purple: #5900c8;
 
-@mercury: #e4e4e4;
+@-webkit-keyframes paletteFan {
+    0% { right:-1.75vh; }
+    100% { right:0vh; }
+}
+@-moz-keyframes paletteFan {
+    0% { right:-1.75vh; }
+    100% { right:0vh; }
+}
+@-o-keyframes paletteFan {
+    0% { right:-1.75vh; }
+    100% { right:0vh; }
+}
+@keyframes paletteFan {
+    0% { right:-1.75vh; }
+    100% { right: 0; }
+}
 
 .bgfade() {
     -webkit-transition: background 0.5s linear;
@@ -41,6 +49,72 @@ font-family: 'ralewaythin';
     -ms-transition: color 0.5s linear;
     -o-transition: color 0.5s linear;
     transition: color 0.5s linear;
+}
+
+.vCenter() {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.transitDelay(@string) {
+    -webkit-animation-delay: @string;
+    -moz-animation-delay: @string;
+    -ms-animation-delay: @string;
+    -o-animation-delay: @string;
+    animation-delay: @string;
+}
+
+.anim (@string) {
+    -webkit-animation: @string;
+    -moz-animation: @string;
+    -ms-animation: @string;
+    -o-animation: @string;
+    animation: @string;
+}
+
+.animDir (@string) {
+    -webkit-animation-direction: @string;
+    -moz-animation-direction: @string;
+    -ms-animation-direction: @string;
+    -o-animation-direction: @string;
+    animation-direction: @string;
+}
+
+.animIter (@string) {
+    -webkit-animation-iteration-count: @string;
+    -moz-animation-iteration-count: @string;
+    -ms-animation-iteration-count: @string;
+    -o-animation-iteration-count: @string;
+    animation-iteration-count: @string;
+}
+
+.bkgCover() {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.noSelect() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.selectable() {
+    -webkit-touch-callout: initial;
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
 }
 
 .scheme_t1 {
@@ -341,21 +415,17 @@ font-family: 'ralewaythin';
 }
 
 html, body {
+    height:100vh;
+    width:100vw;
     margin:0;
     padding:0;
-    height:100%;
     overflow: hidden;
 }
 
 html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    .noSelect;
 }
 
 *, *:before, *:after {
@@ -367,88 +437,69 @@ body {
 }
 
 body>header {
+    height:27.5vh;
+    width:100vw;
+    overflow:hidden;
+    position:relative;
+    
     background-image:url('../img/swirl_pattern.png');
     background-repeat:repeat;
     background-size: 247px;
-    height:27.5vh;
-    width:100%;
-    overflow:hidden;
-    position:relative;
 
     #palettes {
         height:8vh;
-        position:absolute;
         right:0;
-        top:50%;
+        position:absolute;
+        .vCenter;
             
         div {
             height:1.75vh;
             width:3.5vh;
             right:-1.75vh;
             position:absolute;
+            
             background-repeat:no-repeat;
             background-size:cover;
             cursor:pointer;
+            transition: 0.25s;
             
-            -webkit-animation: paletteFan 0.3s 1;
-            -moz-animation: paletteFan 0.3s 1;
-            -o-animation: paletteFan 0.3s 1;
-            animation: paletteFan 0.3s 1;
-            -webkit-animation-iteration-count: 2; /* Chrome, Safari, Opera */
-            animation-iteration-count: 2;
-            -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
-            animation-direction: alternate;
+            .anim(paletteFan 0.3s 1);
+            .animIter(2);
+            .animDir(alternate);
             
             &:hover  {
-                transition: 0.1s;
                 right:0;
+                transition: 0.1s;
             }
             
-            transition: 0.25s;
-        
             &.t1 {
                 background-image:url('../img/cs-default.png');
-                -webkit-animation-delay: 0.1s;
-                animation-delay: 0.1s;
-                -o-animation-delay: 0.1s;
-                -moz-animation-delay: 0.1s;
+                .transitDelay(0.1s);
             }
             
             &.t2 {
                 top:2vh;
                 background-image:url('../img/cs-blue.png');
-                -webkit-animation-delay: 0.2s;
-                animation-delay: 0.2s;
-                -o-animation-delay: 0.2s;
-                -moz-animation-delay: 0.2s;
+                .transitDelay(0.2s);
             }
             
             &.t3 {
                 top:4vh;
                 background-image:url('../img/cs-green.png');
-                -webkit-animation-delay: 0.3s;
-                animation-delay: 0.3s;
-                -o-animation-delay: 0.3s;
-                -moz-animation-delay: 0.3s;
+                .transitDelay(0.3s);
             }
             
             &.t4 {
                 top:6vh;
                 background-image:url('../img/cs-cyan.png');
-                -webkit-animation-delay: 0.4s;
-                animation-delay: 0.4s;
-                -o-animation-delay: 0.4s;
-                -moz-animation-delay: 0.4s;
+                .transitDelay(0.4s);
             }
         }
     }
     
     >div {
           position: relative;
-          top: 50%;
-          -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+          .vCenter;
         
         >h2 {
             margin-top:-1vh;
@@ -459,16 +510,12 @@ body>header {
         }
 
         >h1, >h2 {
-            -webkit-touch-callout: initial;
-            -webkit-user-select: initial;
-            -khtml-user-select: initial;
-            -moz-user-select: initial;
-            -ms-user-select: initial;
-            user-select: initial;
+            .selectable;
             margin-left: 4vh;
-            letter-spacing: -2px;
-            font-size: 10vh;
+            
+            letter-spacing: -0.1vh;
             line-height:10vh;
+            font-size: 10vh;
             font-family: dekar_lightregular;
         }
     }
@@ -476,50 +523,37 @@ body>header {
 
 main {
     height:60vh;
-    width:100%;
+    width:100vw;
 
     section {
-        height:50%;
+        height:30vh;
 
         header {
-            height:32.53%;
+            height:10vh;
+            width:100vw;
             overflow:hidden;
             position:relative;
-            width:100%;
-
-            div {
-                height:13.83%;
-            }
 
             h3 {
+                left:3vh;
+                bottom:2vh;
                 float:left;
+                position:absolute;
+                
                 color: #fff;
-                letter-spacing: -1px;
+                font-family: dekar_lightregular;
                 font-size:5vh;
                 line-height:5vh;
-                font-family: dekar_lightregular;
-                bottom:2vh;
-                position:absolute;
-                left:3vh;
+                letter-spacing: -0.1vh;
             }
         }
         
         .image_slider {
-            height: 68%;
-            
+            a {
+                height:20.2vh;
+            }
             img {
                 width:100%;
-                height:100%;
-            }
-            
-            a {
-                width:240px;
-                float:left;
-                height: 100%;
-            }
-            
-            .slick-track,
-            .slick-list {
                 height:100%;
             }
         }
@@ -528,34 +562,32 @@ main {
 
 
 nav {
-    background-color:@mercury;
-    margin-left: 30vh;
-    height:86.37%;
-    overflow:hidden;
-    position: Absolute;
-    bottom: 0;
+    height:8.5vh;
     right: 0;
-    left: 0;
+    bottom: 0;
+    left: 30vh;
+    overflow:hidden;
+    position: absolute;
+    background-color:@mercury;
 
     >ul {
         margin-left: 3vh;
-        height:8.4vh;
 
         >li {
+            height:8.5vh;
+            float:left;
             display:inline-block;
             background-color:@mercury;
-            float:left;
-            height:100%;
-            min-width:95px;
 
             a {
                 top:0;
-                text-decoration: none;
-                padding: 3vh 2vh 0 2vh;
                 display: block;
+                padding: 3vh 2vh 0 2vh;
+                
                 color: #616161;
-                letter-spacing: -1px;
+                letter-spacing: -0.1vh;
                 line-height:2.8vh;
+                text-decoration: none;
                 font-size:2.8vh;
                 font-family: geosanslightregular;
             }
@@ -565,28 +597,28 @@ nav {
         
 footer {
     height:12.5vh;
-    width:100%;
-    background-color: #090a0f;
+    width:100vw;
     overflow:hidden;
+    padding-top:1vh;
+    background-color: #090a0f !important;
 
     >div {
+        height:11.5vh;
+        width:100vw;
+        position:relative;
         background-image:url('../img/swirl_pattern_dark.png');
         background-repeat:repeat-x;
         background-size: 247px;
-        width:100%;
-        height:90%;
-        position:relative;
-        margin-top: 1vh;
 
         aside {
-            font-family: 'geosanslightregular';
+            height:11.5vh;
             width:55vh;
-            color:#8f959b;
-            position:absolute;
-            background-color:#222629;
-            height:100%;
-            position:relative;
             left:-51vh;
+            position:relative;
+            background-color:#222629;
+            
+            font-family: 'geosanslightregular';
+            color:#8f959b;
             transition: 1s;
 
             &:hover  {
@@ -595,20 +627,20 @@ footer {
             }
 
             p {
-                line-height: 1.75vh;
-                font-weight: 600;
                 padding: 0.5vh 4.5vh 0 0.5vh;
-                line-height: 1.45vh;
+                font-weight: 600;
+                line-height: 1.75vh;
                 font-size: 1.25vh;
             }
 
             .tab {
-                position: absolute;
                 width: 4vh;
-                bottom: 0;
-                right: 0;
                 top: 0;
+                right: 0;
+                bottom: 0;
+                position: absolute;
                 cursor:pointer;
+                
                 background-image:url('../img/about-me-tab.png');
                 background-size: auto 100%;
                 background-repeat: no-repeat;
@@ -620,14 +652,14 @@ footer {
 }
 
 address {
+    height:11.5vh;
+    top: 0;
+    right:0;
     position:absolute;
     display:inline-block;
-    right:0;
-    top: 0;
-    height:100%;
 
     ul {
-        height:95%;
+        height:11vh;
         
         li {
             text-align:right;
@@ -638,38 +670,27 @@ address {
             clear:left;
             font-family: geosanslightregular;
             color:#fff;
-            line-height:15px;
+            line-height:2vh;
             font-size:2vh;
             
             div {
                 right:0;
-                padding-right:10%;
+                padding-right:1vh;
                 position: relative;
-                top: 50%;
-                -webkit-transform: translateY(-50%);
-                -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
+                .vCenter;
             }
             
             a {
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
+                .bkgCover;
+                .vCenter;
+                width: 3vh;
+                display:block;
+                position: relative;
+                float:left;
+                margin-right: .6vh;
+                
                 background-repeat:no-repeat;
                 background-position:center center;
-                
-                display:block;
-                width: 3vh;
-                float:left;
-                line-height:25px;
-                margin-right: .6vh;
-                position: relative;
-                z-index: 1;
-                top: 50%;
-                -webkit-transform: translateY(-50%);
-                -ms-transform: translateY(-50%);
-                transform: translateY(-50%);
         
                 &:before{
                     content: "";
@@ -715,11 +736,12 @@ address {
 
 .fancybox-title {
     font-family: 'geosanslightregular';
-    font-size:16px;
-    line-height:18px;
+    font-size:1em;
+    line-height:1.25em;
     em {
-        font-size:18px;
-        line-height:25px;
+        font-size:1.15em;
+        line-height:1.15em;
+        margin-bottom:0.5vh;
         font-weight:bold;
         display:block;
     }
@@ -730,32 +752,16 @@ address {
         }
     }
     i {
-        font-size: 13px;
+        font-size: 0.8em;
+        line-height: 0.8em;
         font-style: italic;
     }
-}
-
-@-webkit-keyframes paletteFan {
-    0%   { right:-1.75vh; }
-    100% { right:0vh; }
-}
-@-moz-keyframes paletteFan {
-    0%   { right:-1.75vh; }
-    100% { right:0vh; }
-}
-@-o-keyframes paletteFan {
-    0%   { right:-1.75vh; }
-    100% { right:0vh; }
-}
-@keyframes paletteFan {
-    0%   { right:-1.75vh; }
-    100%   { right: 0; }
 }
 
 @media 
 screen and (max-width: 950px) {
     body>header {
-        height:20% !important;
+        height:20vh !important;
         >div {
             >h1, >h2 {
                 font-size:10vw !important;
@@ -763,53 +769,52 @@ screen and (max-width: 950px) {
             }
         }
     }
-
     main {
-        height:70% !important;
-
+        height:70vh !important;
         nav {
             display:none !important;
         }
-
         section {
+            height:35vh !important;
+            
             header {
-                height:20% !important;
+                height:10vh !important;
                 h3 {
                     font-size:4vh;
                     position: relative;
-                    top: 50%;
-                    -webkit-transform: translateY(-50%);
-                    -ms-transform: translateY(-50%);
-                    transform: translateY(-50%);
+                    .vCenter;
                 }
             }
             
             .image_slider {
-                height: 80%;
-            }
-        }
-    }
-    
-    footer {
-        height:10% !important;
-    }
-
-    address {
-        ul {
-            height:90%;
-
-            li {
-                width: 13vh;
-                font-size:1.5vh;
-
                 a {
-                    width: 2.25vh;
-                    margin-right: .5vh;
+                    height: 25vh !important;
                 }
             }
         }
     }
+    footer {
+        height:10vh !important;
+    }
+    address {
+        ul {
+            height:8vh !important;
 
+            li {
+                width: 14vh !important;
+                font-size:1.75vh !important;
+                line-height:1.75vh !important;
+
+                a {
+                    width: 2vh !important;
+                    margin-right: .5vh !important;
+                }
+            }
+        }
+    }
+    aside {
+        height:9vh !important;
+    }
     .fancybox-title {
         display:none !important;
     }
@@ -831,12 +836,9 @@ screen and (max-height: 900px) {
 screen and (max-width: 500px) {
     aside {
         display:none;
-        p {
-            font-size: 1.5vh;
-        }
     }
 }
-/* iPad landscape-specific styles */
+/* iPad landscape-specific styles 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
     body {
         height:98%;
@@ -854,4 +856,4 @@ screen and (max-width: 500px) {
             }
         }
     }
-}
+}*/
