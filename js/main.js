@@ -29,13 +29,28 @@
             return elem;
         };
     }(document.createElement));
+        
+    function rInt(minValue, maxValue) {
+        //Input: (int)minValue, (int)maxValue
+        //Return: (int) which is greater than minValue and less than maxValue.
+        var i;
+
+        i = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+
+        return i;
+    };
 
     define(requires, function ($) {
         imagesArr = [];
         designSlider = $('#design .image_slider');
         illustrationSlider = $('#illustration .image_slider');
         isMobile = false;
-
+        
+        var ri = rInt(1, 4),
+            scheme = "scheme_t" + ri + " immediate";
+        
+        document.body.className = scheme;
+        
         images = (function () {
             return {
                 image : function (gallery, subcat, title, description, filename) {
@@ -428,21 +443,6 @@
         });
 
         $(document).bind('touchmove', false);
-        
-        function rInt(minValue, maxValue) {
-            //Input: (int)minValue, (int)maxValue
-            //Return: (int) which is greater than minValue and less than maxValue.
-            var i;
-
-            i = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
-
-            return i;
-        };
-        
-        var ri = rInt(1, 4),
-            scheme = "scheme_t" + ri + " immediate";
-        
-        document.body.className = scheme;
     });
 
 }());
