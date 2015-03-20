@@ -9,7 +9,7 @@
 
     var requires, images, imagesArr, isMobile, designSlider, illustrationSlider;
 
-    requires = ["jquery", "fancybox", "fancybox_thumbs", "slick", "analytics"];
+    requires = ["jquery", "fancybox", "fancybox_thumbs", "slick"];
 
     document.createElement = (function (fn) {
         //Override createElement to take ID and Class.
@@ -428,6 +428,21 @@
         });
 
         $(document).bind('touchmove', false);
+        
+        function rInt(minValue, maxValue) {
+            //Input: (int)minValue, (int)maxValue
+            //Return: (int) which is greater than minValue and less than maxValue.
+            var i;
+
+            i = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+
+            return i;
+        };
+        
+        var ri = rInt(1, 4),
+            scheme = "scheme_t" + ri;
+        
+        document.body.className = scheme;
     });
 
 }());
