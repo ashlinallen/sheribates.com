@@ -2,16 +2,13 @@
 /*jslint browser: true, indent: 4*/
 /*global $, define */
 
-//Todo: contact icons on ipad
-//Todo: 4 images on ipad horizontal
-//Todo: 2 images on ipad vertical
-//Todo: Fix broken layout on horizontal ipad
-//Todo: unfilter on ipad
+//Todo: Selecting category then resizing doesn't re-highlight the default category
+//Todo: CSS animation glitches in IE
 
 (function () {
     "use strict";
 
-    var requires, images, imagesArr, isMobile;
+    var requires, images, imagesArr, isMobile, designSlider, illustrationSlider;
 
     requires = ["jquery", "fancybox", "fancybox_thumbs", "slick", "analytics"];
 
@@ -36,9 +33,10 @@
 
     define(requires, function ($) {
         imagesArr = [];
-
+        designSlider = $('#design .image_slider');
+        illustrationSlider = $('#illustration .image_slider');
         isMobile = false;
-            
+
         images = (function () {
             return {
                 image : function (gallery, subcat, title, description, filename) {
@@ -123,7 +121,7 @@
                     new images.image("illustration", "FanArt", "", "", "Rini-Ink");
                     new images.image("illustration", "FanArt", "", "", "sailor-moon-flats");
                     new images.image("illustration", "FanArt", "", "", "Sailor-Moon-Redux-Flats");
-                    
+
                     for (i = 0; i < imagesArr.length; i += 1) {
                         combinedTitle = "";
 
@@ -139,30 +137,27 @@
                         image.setAttribute("src", imgUrl + "_thumb.jpg");
 
                         anchor = document.createElement("a", undefined, "fancybox");
-                        
+
                         if ((imagesArr[i].title !== undefined) && (imagesArr[i].title !== "")) {
                             em = document.createElement("em");
                             em.innerText = imagesArr[i].title;
                             combinedTitle += em.outerHTML;
                         }
-                        
+
                         combinedTitle += imagesArr[i].description;
-                        
+
                         anchor.href = imgUrl + ".jpg";
                         anchor.setAttribute("data-fancybox-title", combinedTitle);
                         anchor.setAttribute("rel", imagesArr[i].subcat);
                         anchor.appendChild(image);
-                        
+
                         slickContainer.append(anchor);
                     }
                 }
             };
         }());
-
+        
         images.init();
-
-        var designSlider = $('#design .image_slider');
-        var illustrationSlider = $('#illustration .image_slider');
 
         $(illustrationSlider).slick({
             lazyLoad: 'ondemand',
@@ -174,72 +169,103 @@
             slidesToShow: 7,
             slidesToScroll: 7,
             appendDots: $("#Original"),
-            
+
             responsive: [
                 {
-                    breakpoint: 1950,
+                    breakpoint: 2296,
+                    settings: {
+                        slidesToShow: 8,
+                        slidesToScroll: 8,
+                        filter: '[rel="Original"]',
+                        appendDots: $("#Original"),
+                        callback: function () {
+                            $('#design nav ul li a').removeClass();
+                            $('#Original a').addClass('selected');
+                        }
+                    }
+                },
+                {
+                    breakpoint: 2009,
+                    settings: {
+                        slidesToShow: 7,
+                        slidesToScroll: 7,
+                        filter: '[rel="Original"]',
+                        appendDots: $("#Original"),
+                        callback: function () {
+                            $('#design nav ul li a').removeClass();
+                            $('#Original a').addClass('selected');
+                        }
+                    }
+                },
+                {
+                    breakpoint: 1722,
                     settings: {
                         slidesToShow: 6,
                         slidesToScroll: 6,
                         filter: '[rel="Original"]',
                         appendDots: $("#Original"),
-                        callback: function() {
+                        callback: function () {
                             $('#design nav ul li a').removeClass();
                             $('#Original a').addClass('selected');
                         }
                     }
                 },
                 {
-                    breakpoint: 1700,
+                    breakpoint: 1435,
                     settings: {
                         slidesToShow: 5,
                         slidesToScroll: 5,
                         filter: '[rel="Original"]',
                         appendDots: $("#Original"),
-                        callback: function() {
+                        callback: function () {
                             $('#design nav ul li a').removeClass();
                             $('#Original a').addClass('selected');
                         }
                     }
                 },
                 {
-                    breakpoint: 1450,
+                    breakpoint: 1148,
                     settings: {
                         slidesToShow: 4,
                         slidesToScroll: 4,
                         filter: '[rel="Original"]',
                         appendDots: $("#Original"),
-                        callback: function() {
+                        callback: function () {
                             $('#design nav ul li a').removeClass();
                             $('#Original a').addClass('selected');
                         }
                     }
                 },
                 {
-                    breakpoint: 1200,
+                    breakpoint: 861,
                     settings: {
+                        speed: 200,
                         slidesToShow: 3,
                         slidesToScroll: 3,
-                        filter: '[rel="Original"]',
-                        appendDots: $("#Original"),
-                        callback: function() {
-                            $('#design nav ul li a').removeClass();
-                            $('#Original a').addClass('selected');
-                        }
+                        unfilter: true
                     }
                 },
                 {
-                    breakpoint: 950,
+                    breakpoint: 574,
                     settings: {
                         speed: 200,
                         slidesToShow: 2,
                         slidesToScroll: 2,
                         unfilter: true
                     }
+                },
+                {
+                    breakpoint: 287,
+                    settings: {
+                        speed: 200,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        unfilter: true
+                    }
                 }
             ]
         });
-        
+
         $(designSlider).slick({
             lazyLoad: 'ondemand',
             dots: true,
@@ -250,72 +276,103 @@
             slidesToShow: 7,
             slidesToScroll: 7,
             appendDots: $("#LogoAndWeb"),
-            
+
             responsive: [
                 {
-                    breakpoint: 1950,
+                    breakpoint: 2296,
+                    settings: {
+                        slidesToShow: 8,
+                        slidesToScroll: 8,
+                        filter: '[rel="LogoAndWeb"]',
+                        appendDots: $("#LogoAndWeb"),
+                        callback: function () {
+                            $('#illustration nav ul li a').removeClass();
+                            $('#LogoAndWeb a').addClass('selected');
+                        }
+                    }
+                },
+                {
+                    breakpoint: 2009,
+                    settings: {
+                        slidesToShow: 7,
+                        slidesToScroll: 7,
+                        filter: '[rel="LogoAndWeb"]',
+                        appendDots: $("#LogoAndWeb"),
+                        callback: function () {
+                            $('#illustration nav ul li a').removeClass();
+                            $('#LogoAndWeb a').addClass('selected');
+                        }
+                    }
+                },
+                {
+                    breakpoint: 1722,
                     settings: {
                         slidesToShow: 6,
                         slidesToScroll: 6,
                         filter: '[rel="LogoAndWeb"]',
                         appendDots: $("#LogoAndWeb"),
-                        callback: function() {
+                        callback: function () {
                             $('#illustration nav ul li a').removeClass();
                             $('#LogoAndWeb a').addClass('selected');
                         }
                     }
                 },
                 {
-                    breakpoint: 1700,
+                    breakpoint: 1435,
                     settings: {
                         slidesToShow: 5,
                         slidesToScroll: 5,
                         filter: '[rel="LogoAndWeb"]',
                         appendDots: $("#LogoAndWeb"),
-                        callback: function() {
+                        callback: function () {
                             $('#illustration nav ul li a').removeClass();
                             $('#LogoAndWeb a').addClass('selected');
                         }
                     }
                 },
                 {
-                    breakpoint: 1450,
+                    breakpoint: 1148,
                     settings: {
                         slidesToShow: 4,
                         slidesToScroll: 4,
                         filter: '[rel="LogoAndWeb"]',
                         appendDots: $("#LogoAndWeb"),
-                        callback: function() {
+                        callback: function () {
                             $('#illustration nav ul li a').removeClass();
                             $('#LogoAndWeb a').addClass('selected');
                         }
                     }
                 },
                 {
-                    breakpoint: 1200,
+                    breakpoint: 861,
                     settings: {
+                        speed: 200,
                         slidesToShow: 3,
                         slidesToScroll: 3,
-                        filter: '[rel="LogoAndWeb"]',
-                        appendDots: $("#LogoAndWeb"),
-                        callback: function() {
-                            $('#illustration nav ul li a').removeClass();
-                            $('#LogoAndWeb a').addClass('selected');
-                        }
+                        unfilter: true
                     }
                 },
                 {
-                    breakpoint: 950,
+                    breakpoint: 574,
                     settings: {
                         speed: 200,
                         slidesToShow: 2,
                         slidesToScroll: 2,
                         unfilter: true
                     }
+                },
+                {
+                    breakpoint: 287,
+                    settings: {
+                        speed: 200,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        unfilter: true
+                    }
                 }
             ]
         });
-        
+
         if (!isMobile) {
             designSlider.slick('slickFilter', '[rel="LogoAndWeb"]');
             illustrationSlider.slick('slickFilter', '[rel="Original"]');
@@ -358,11 +415,11 @@
             }
         );
 
-        $('#palettes div').on('click', function () {
+        $('#palettes li').on('click', function () {
             $('body').removeClass();
             $('body').addClass('scheme_' + $(this).attr('class'));
         });
-        
+
         $(document).bind('touchmove', false);
     });
 

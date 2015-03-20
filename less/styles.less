@@ -444,15 +444,16 @@ body>header {
     
     background-image:url('../img/swirl_pattern.png');
     background-repeat:repeat;
-    background-size: 247px;
+    background-size: 26vh;
 
     #palettes {
         height:8vh;
+        width: 3.5vh;
         right:0;
         position:absolute;
         .vCenter;
             
-        div {
+        li {
             height:1.75vh;
             width:3.5vh;
             right:-1.75vh;
@@ -474,25 +475,25 @@ body>header {
             
             &.t1 {
                 background-image:url('../img/cs-default.png');
-                .transitDelay(0.1s);
+                .transitDelay(0.6s);
             }
             
             &.t2 {
                 top:2vh;
                 background-image:url('../img/cs-blue.png');
-                .transitDelay(0.2s);
+                .transitDelay(0.7s);
             }
             
             &.t3 {
                 top:4vh;
                 background-image:url('../img/cs-green.png');
-                .transitDelay(0.3s);
+                .transitDelay(0.8s);
             }
             
             &.t4 {
                 top:6vh;
                 background-image:url('../img/cs-cyan.png');
-                .transitDelay(0.4s);
+                .transitDelay(0.9s);
             }
         }
     }
@@ -514,8 +515,8 @@ body>header {
             margin-left: 4vh;
             
             letter-spacing: -0.1vh;
-            line-height:10vh;
-            font-size: 10vh;
+            line-height:7vh;
+            font-size: 7vh;
             font-family: dekar_lightregular;
         }
     }
@@ -527,6 +528,7 @@ main {
 
     section {
         height:30vh;
+        overflow:hidden;
 
         header {
             height:10vh;
@@ -550,7 +552,8 @@ main {
         
         .image_slider {
             a {
-                height:20.2vh;
+                height: 20.2vh;
+                margin-top: -0.1vh;
             }
             img {
                 width:100%;
@@ -759,15 +762,26 @@ address {
         font-style: italic;
     }
 }
+@media 
+screen and (min-width: 1600px) {
+    body>header {
+        >div {
+            >h1, >h2 {
+                font-size:10vh !important;
+                line-height:10vh !important;
+            }
+        }
+    }
+}
 
 @media 
-screen and (max-width: 950px) {
+screen and (max-width: 860px) {
     body>header {
         height:20vh !important;
         >div {
             >h1, >h2 {
-                font-size:10vw !important;
-                line-height:10vw !important;
+                font-size:6.5vh !important;
+                line-height:6.5vh !important;
             }
         }
     }
@@ -815,7 +829,7 @@ screen and (max-width: 950px) {
         }
     }
     aside {
-        height:9vh !important;
+        display:none;
     }
     .fancybox-title {
         display:none !important;
@@ -823,39 +837,14 @@ screen and (max-width: 950px) {
 }
 
 @media 
-screen and (max-height: 900px) {
+screen and (max-width: 500px) {
     body>header {
+        height:20vh !important;
         >div {
             >h1, >h2 {
-                font-size:8vh !important;
-                line-height:8vh !important;
+                font-size:6vh !important;
+                line-height:6vh !important;
             }
         }
     }
 }
-
-@media 
-screen and (max-width: 500px) {
-    aside {
-        display:none;
-    }
-}
-/* iPad landscape-specific styles 
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
-    body {
-        height:98%;
-    }
-    
-    footer {
-        >div {
-            aside {
-                left:0;
-                transition: 0s;
-                p {
-                    line-height: 1.6vh;
-                    font-size: 1.3vh;
-                }
-            }
-        }
-    }
-}*/
