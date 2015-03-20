@@ -38,6 +38,7 @@ font-family: 'ralewaythin';
     0% { right:0vh; }
     100% { right:1.75vh; }
 }
+
 .bgfade() {
     -webkit-transition: background 0.5s linear;
     -moz-transition: background 0.5s linear;
@@ -195,6 +196,14 @@ font-family: 'ralewaythin';
             }
         }
     }
+    
+    .fancybox-title {
+        a {
+            &:hover {
+                color:@secondary;
+            }
+        }
+    }
 }
 
 .scheme_t2 {
@@ -266,6 +275,14 @@ font-family: 'ralewaythin';
             .slick-next:before {
                 color:@secondary;
                 .fgfade;
+            }
+        }
+    }
+    
+    .fancybox-title {
+        a {
+            &:hover {
+                color:@secondary;
             }
         }
     }
@@ -343,6 +360,14 @@ font-family: 'ralewaythin';
             }
         }
     }
+    
+    .fancybox-title {
+        a {
+            &:hover {
+                color:@secondary;
+            }
+        }
+    }
 }
 
 .scheme_t4 {
@@ -414,6 +439,14 @@ font-family: 'ralewaythin';
             .slick-next:before {
                 color:@secondary;
                 .fgfade;
+            }
+        }
+    }
+    
+    .fancybox-title {
+        a {
+            &:hover {
+                color:@secondary;
             }
         }
     }
@@ -753,9 +786,6 @@ address {
     }
     a {
         color:#0645AD;
-        &:hover {
-            color:@violet;
-        }
     }
     i {
         font-size: 0.8em;
