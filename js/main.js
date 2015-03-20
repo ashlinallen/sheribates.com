@@ -443,6 +443,8 @@
         });
 
         $(document).bind('touchmove', false);
+        
+        document.documentElement.className = "loaded";
     });
 
 }());
