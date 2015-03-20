@@ -9,7 +9,7 @@
 
     var requires, images, imagesArr, isMobile, designSlider, illustrationSlider;
 
-    requires = ["jquery", "fancybox", "fancybox_thumbs", "slick"];
+    requires = ["jquery", "fancybox", "fancybox_thumbs", "slick", "analytics"];
 
     document.createElement = (function (fn) {
         //Override createElement to take ID and Class.
