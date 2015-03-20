@@ -2,8 +2,7 @@
 /*jslint browser: true, indent: 4*/
 /*global $, define */
 
-//Todo: Selecting category then resizing doesn't re-highlight the default category
-//Todo: CSS animation glitches in IE
+//Todo: Minor CSS animation glitches in IE for palette selector and aside.
 
 (function () {
     "use strict";
@@ -187,7 +186,7 @@
                         filter: '[rel="Original"]',
                         appendDots: $("#Original"),
                         callback: function () {
-                            $('#design nav ul li a').removeClass();
+                            $('#illustration nav ul li a').removeClass();
                             $('#Original a').addClass('selected');
                         }
                     }
@@ -200,7 +199,7 @@
                         filter: '[rel="Original"]',
                         appendDots: $("#Original"),
                         callback: function () {
-                            $('#design nav ul li a').removeClass();
+                            $('#illustration nav ul li a').removeClass();
                             $('#Original a').addClass('selected');
                         }
                     }
@@ -213,7 +212,7 @@
                         filter: '[rel="Original"]',
                         appendDots: $("#Original"),
                         callback: function () {
-                            $('#design nav ul li a').removeClass();
+                            $('#illustration nav ul li a').removeClass();
                             $('#Original a').addClass('selected');
                         }
                     }
@@ -226,7 +225,7 @@
                         filter: '[rel="Original"]',
                         appendDots: $("#Original"),
                         callback: function () {
-                            $('#design nav ul li a').removeClass();
+                            $('#illustration nav ul li a').removeClass();
                             $('#Original a').addClass('selected');
                         }
                     }
@@ -239,7 +238,7 @@
                         filter: '[rel="Original"]',
                         appendDots: $("#Original"),
                         callback: function () {
-                            $('#design nav ul li a').removeClass();
+                            $('#illustration nav ul li a').removeClass();
                             $('#Original a').addClass('selected');
                         }
                     }
@@ -294,7 +293,7 @@
                         filter: '[rel="LogoAndWeb"]',
                         appendDots: $("#LogoAndWeb"),
                         callback: function () {
-                            $('#illustration nav ul li a').removeClass();
+                            $('#design nav ul li a').removeClass();
                             $('#LogoAndWeb a').addClass('selected');
                         }
                     }
@@ -307,7 +306,7 @@
                         filter: '[rel="LogoAndWeb"]',
                         appendDots: $("#LogoAndWeb"),
                         callback: function () {
-                            $('#illustration nav ul li a').removeClass();
+                            $('#design nav ul li a').removeClass();
                             $('#LogoAndWeb a').addClass('selected');
                         }
                     }
@@ -320,7 +319,7 @@
                         filter: '[rel="LogoAndWeb"]',
                         appendDots: $("#LogoAndWeb"),
                         callback: function () {
-                            $('#illustration nav ul li a').removeClass();
+                            $('#design nav ul li a').removeClass();
                             $('#LogoAndWeb a').addClass('selected');
                         }
                     }
@@ -333,7 +332,7 @@
                         filter: '[rel="LogoAndWeb"]',
                         appendDots: $("#LogoAndWeb"),
                         callback: function () {
-                            $('#illustration nav ul li a').removeClass();
+                            $('#design nav ul li a').removeClass();
                             $('#LogoAndWeb a').addClass('selected');
                         }
                     }
@@ -346,7 +345,7 @@
                         filter: '[rel="LogoAndWeb"]',
                         appendDots: $("#LogoAndWeb"),
                         callback: function () {
-                            $('#illustration nav ul li a').removeClass();
+                            $('#design nav ul li a').removeClass();
                             $('#LogoAndWeb a').addClass('selected');
                         }
                     }
