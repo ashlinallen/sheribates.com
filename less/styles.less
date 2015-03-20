@@ -39,20 +39,20 @@ font-family: 'ralewaythin';
     100% { right:1.75vh; }
 }
 
-.bgfade() {
-    -webkit-transition: background 0.5s linear;
-    -moz-transition: background 0.5s linear;
-    -ms-transition: background 0.5s linear;
-    -o-transition: background 0.5s linear;
-    transition: background 0.5s linear;
+.bgfade(@string) {
+    -webkit-transition: background @string linear;
+    -moz-transition: background @string linear;
+    -ms-transition: background @string linear;
+    -o-transition: background @string linear;
+    transition: background @string linear;
 }
 
-.fgfade() {
-    -webkit-transition: color 0.5s linear;
-    -moz-transition: color 0.5s linear;
-    -ms-transition: color 0.5s linear;
-    -o-transition: color 0.5s linear;
-    transition: color 0.5s linear;
+.fgfade(@string) {
+    -webkit-transition: color @string linear;
+    -moz-transition: color @string linear;
+    -ms-transition: color @string linear;
+    -o-transition: color @string linear;
+    transition: color @string linear;
 }
 
 .vCenter() {
@@ -135,17 +135,12 @@ font-family: 'ralewaythin';
         >h2 {
             color:@primary;
         }
-        
-        >h1, >h2 {
-            .fgfade;
-        }
     }
 
     main>section {
         &#design {
             header {
                 background-color:@secondary;
-                .bgfade;
             }
             
             nav>ul>li {
@@ -153,14 +148,12 @@ font-family: 'ralewaythin';
                     &:hover,
                     &.selected {
                         color:@secondary;
-                        .fgfade;
                     }
                 }
                 
                 .slick-dots li.slick-active button:before
                 {
                     color:@secondary;
-                    .fgfade;
                 }
             }
         }
@@ -168,7 +161,6 @@ font-family: 'ralewaythin';
         &#illustration {
             header {
                 background-color:@primary;
-                .bgfade;
             }
 
             nav>ul>li {
@@ -176,14 +168,12 @@ font-family: 'ralewaythin';
                     &:hover,
                     &.selected {
                         color:@primary;
-                        .fgfade;
                     }
                 }
                 
                 .slick-dots li.slick-active button:before
                 {
                     color:@primary;
-                    .fgfade;
                 }
             }
         }
@@ -192,7 +182,6 @@ font-family: 'ralewaythin';
             .slick-prev:before,
             .slick-next:before {
                 color:@secondary;
-                .fgfade;
             }
         }
     }
@@ -209,7 +198,8 @@ font-family: 'ralewaythin';
 .scheme_t2 {
     @primary: @portage;
     @secondary: @dodger;
-        header>div {
+    
+    header>div {
         >h1 {
             color:@secondary;
         }
@@ -217,17 +207,12 @@ font-family: 'ralewaythin';
         >h2 {
             color:@primary;
         }
-        
-        >h1, >h2 {
-            .fgfade;
-        }
     }
 
     main>section {
         &#design {
             header {
                 background-color:@secondary;
-                .bgfade;
             }
             
             nav>ul>li {
@@ -235,14 +220,12 @@ font-family: 'ralewaythin';
                     &:hover,
                     &.selected {
                         color:@secondary;
-                        .fgfade;
                     }
                 }
                 
                 .slick-dots li.slick-active button:before
                 {
                     color:@secondary;
-                    .fgfade;
                 }
             }
         }
@@ -250,7 +233,6 @@ font-family: 'ralewaythin';
         &#illustration {
             header {
                 background-color:@primary;
-                .bgfade;
             }
 
             nav>ul>li {
@@ -258,14 +240,12 @@ font-family: 'ralewaythin';
                     &:hover,
                     &.selected {
                         color:@primary;
-                        .fgfade;
                     }
                 }
                 
                 .slick-dots li.slick-active button:before
                 {
                     color:@primary;
-                    .fgfade;
                 }
             }
         }
@@ -274,7 +254,6 @@ font-family: 'ralewaythin';
             .slick-prev:before,
             .slick-next:before {
                 color:@secondary;
-                .fgfade;
             }
         }
     }
@@ -291,7 +270,8 @@ font-family: 'ralewaythin';
 .scheme_t3 {
     @primary: @persianpink;
     @secondary: @cucumber;
-        header>div {
+    
+    header>div {
         >h1 {
             color:@secondary;
         }
@@ -299,17 +279,12 @@ font-family: 'ralewaythin';
         >h2 {
             color:@primary;
         }
-        
-        >h1, >h2 {
-            .fgfade;
-        }
     }
 
     main>section {
         &#design {
             header {
                 background-color:@secondary;
-                .bgfade;
             }
             
             nav>ul>li {
@@ -317,14 +292,12 @@ font-family: 'ralewaythin';
                     &:hover,
                     &.selected {
                         color:@secondary;
-                        .fgfade;
                     }
                 }
                 
                 .slick-dots li.slick-active button:before
                 {
                     color:@secondary;
-                    .fgfade;
                 }
             }
         }
@@ -332,7 +305,6 @@ font-family: 'ralewaythin';
         &#illustration {
             header {
                 background-color:@primary;
-                .bgfade;
             }
 
             nav>ul>li {
@@ -340,14 +312,12 @@ font-family: 'ralewaythin';
                     &:hover,
                     &.selected {
                         color:@primary;
-                        .fgfade;
                     }
                 }
                 
                 .slick-dots li.slick-active button:before
                 {
                     color:@primary;
-                    .fgfade;
                 }
             }
         }
@@ -356,7 +326,6 @@ font-family: 'ralewaythin';
             .slick-prev:before,
             .slick-next:before {
                 color:@secondary;
-                .fgfade;
             }
         }
     }
@@ -373,6 +342,7 @@ font-family: 'ralewaythin';
 .scheme_t4 {
     @primary: @purple;
     @secondary: @java;
+    
     header>div {
         >h1 {
             color:@secondary;
@@ -381,17 +351,12 @@ font-family: 'ralewaythin';
         >h2 {
             color:@primary;
         }
-        
-        >h1, >h2 {
-            .fgfade;
-        }
     }
 
     main>section {
         &#design {
             header {
                 background-color:@secondary;
-                .bgfade;
             }
             
             nav>ul>li {
@@ -399,14 +364,12 @@ font-family: 'ralewaythin';
                     &:hover,
                     &.selected {
                         color:@secondary;
-                        .fgfade;
                     }
                 }
                 
                 .slick-dots li.slick-active button:before
                 {
                     color:@secondary;
-                    .fgfade;
                 }
             }
         }
@@ -414,7 +377,6 @@ font-family: 'ralewaythin';
         &#illustration {
             header {
                 background-color:@primary;
-                .bgfade;
             }
 
             nav>ul>li {
@@ -422,14 +384,12 @@ font-family: 'ralewaythin';
                     &:hover,
                     &.selected {
                         color:@primary;
-                        .fgfade;
                     }
                 }
                 
                 .slick-dots li.slick-active button:before
                 {
                     color:@primary;
-                    .fgfade;
                 }
             }
         }
@@ -438,7 +398,6 @@ font-family: 'ralewaythin';
             .slick-prev:before,
             .slick-next:before {
                 color:@secondary;
-                .fgfade;
             }
         }
     }
@@ -450,6 +409,10 @@ font-family: 'ralewaythin';
             }
         }
     }
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 html, body {
@@ -464,10 +427,6 @@ html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     .noSelect;
-}
-
-*, *:before, *:after {
-    box-sizing: inherit;
 }
 
 body {
@@ -549,6 +508,7 @@ body>header {
         }
 
         >h1, >h2 {
+            .fgfade(0.5s);
             .selectable;
             margin-left: 4vh;
             
@@ -573,7 +533,8 @@ main {
             width:100vw;
             overflow:hidden;
             position:relative;
-
+            .bgfade(0.5s);
+            
             h3 {
                 left:3vh;
                 bottom:2vh;
@@ -589,6 +550,10 @@ main {
         }
         
         .image_slider {
+            .slick-prev:before,
+            .slick-next:before {
+                .bgfade(0.5s);
+            }
             a {
                 height: 20.04vh;
             }
@@ -619,11 +584,12 @@ nav {
             float:left;
             display:inline-block;
             background-color:@mercury;
-
+            
             a {
                 top:0;
                 display: block;
                 padding: 3vh 2vh 0 2vh;
+                .fgfade(0.5s);
                 
                 color: #616161;
                 letter-spacing: -0.1vh;
@@ -631,6 +597,11 @@ nav {
                 text-decoration: none;
                 font-size:2.8vh;
                 font-family: geosanslightregular;
+            }
+            
+            .slick-dots li.slick-active button:before
+            {
+                .fgfade(0.5s);
             }
         }
     }
@@ -793,6 +764,17 @@ address {
         font-style: italic;
     }
 }
+
+.immediate {
+    h1, h2, a {
+        .fgfade(0s);
+    }
+    
+    .slick-dots li.slick-active button:before, header {
+        .bgfade(0s);
+    }
+}
+
 @media 
 screen and (min-width: 1600px) {
     body>header {

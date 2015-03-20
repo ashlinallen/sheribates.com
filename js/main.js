@@ -440,7 +440,7 @@
         };
         
         var ri = rInt(1, 4),
-            scheme = "scheme_t" + ri;
+            scheme = "scheme_t" + ri + " immediate";
         
         document.body.className = scheme;
     });
